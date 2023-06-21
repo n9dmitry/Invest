@@ -1,27 +1,23 @@
 {% extends 'base.html'%}
-
-
 {% load static %}
-<link rel="stylesheet" href=" {% static 'Invest/css/registration.css' %} ">
 
+{% block styles %}
+    <link rel="stylesheet" href=" {% static 'Invest/css/registration.css' %} ">
+{% endblock %}
 
+{% block title %}
+    TITLE1
+{% endblock %}
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <title>Главная</title>
-</head>
-<body>
- <h1>Регистрация</h1>
- <form method="post">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required><br><br>
-  <label for="password">Пароль:</label>
-  <input type="password" id="password" name="password" required><br><br>
-  <input type="submit" value="Зарегистрироваться">
-  <span>Уже есть аккаунт?</span>
-  <div><a>Войти</a></div>
- </form>
-</body>
-</html>
+{% block content %}
+    <h1>Регистрация</h1>
+    <form method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Зарегистрироваться">
+    <span>Уже есть аккаунт?</span>
+    <div><a>Войти</a></div>
+    </form>
+{% endblock %}
