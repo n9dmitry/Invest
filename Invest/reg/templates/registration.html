@@ -1,3 +1,12 @@
+{% extends 'base.html'%}
+
+
+{% load static %}
+<link rel="stylesheet" href=" {% static 'Invest/css/registration.css' %} ">
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +20,8 @@
   <label for="password">Пароль:</label>
   <input type="password" id="password" name="password" required><br><br>
   <input type="submit" value="Зарегистрироваться">
+  <span>Уже есть аккаунт?</span>
+  <div><a>Войти</a></div>
  </form>
 </body>
 </html>
