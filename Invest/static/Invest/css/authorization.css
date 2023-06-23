@@ -1,0 +1,17 @@
+.authorization {
+    font-size: 18px;
+    width: fit-content;
+    padding: 25px;
+    color: #855E5E;
+    padding-bottom: 50px;
+
+}
+
+#enterbutton {
+    width: fit-content;
+    padding: 5px;
+    background-color: #A38787;
+    border: None;
+    font-size: 25px;
+    color: white;
+}

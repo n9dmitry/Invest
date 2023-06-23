@@ -1,1 +1,58 @@
-.reg {}
+form {
+    /*border: 1px solid black;*/
+    font-size: 18px;
+    width: fit-content;
+    padding: 25px;
+    color: #855E5E;
+
+}
+
+form > div > input {
+    margin-top: 15px;
+}
+
+.enter {
+    width: fit-content;
+    padding: 50px;
+    color: #855E5E;
+    font-size: 18px;
+
+}
+
+
+.enter-button {
+    width: fit-content;
+    padding: 5px;
+    background-color: #A38787;
+}
+
+.enter-button > a {
+    font-size: 25px;
+    color: white;
+    text-decoration: None;
+
+}
+
+#regbutton {
+    width: fit-content;
+    padding: 5px;
+    background-color: #A38787;
+    border: None;
+    font-size: 25px;
+    color: white;
+}
+
+.reg > a {
+    color: #855E5E;
+
+}
+
+
+.general {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+    border: 1px solid black;
+    padding-left: 50px;
+}
+

@@ -1,9 +1,9 @@
 .header {
     background-color: black;
-    border-radius: 15px;
 }
 
-img {
-    width: 50%;
+.header > img {
+    width: 30%;
     height: auto;
 }
+
