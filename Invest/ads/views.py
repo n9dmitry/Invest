@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from .forms import AddsForm
 
 from django.shortcuts import render
 

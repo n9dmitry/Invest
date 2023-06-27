@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/base.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/ads.css' %} ">
 {% endblock %}
 
 {% block title %}
@@ -10,21 +10,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class = "adds" >
-        {% for ad in ads %}
-		<div class="row align-items-center" style="display:inline-block">
-        <div class="card" style="width: 18rem;">
-            <img src="{{ ads.image.url }}" class="card-img-top" alt="{{ ad.name }}">
-            <div class="card-body">
-            <h5 class="card-title">{{ ads.title }}</h5>
-            <p class="card-text">{{ product.description }}</p>
-              <p class="h4">{{ product.price }} {{ currency }}</p>
-            <a href="#" class="btn btn-primary">Купить</a>
-              <button type="button" class="btn btn-info">Добавить в корзину</button>
-            </div>
+    <div class = "ads">
+        <div>
+            <img src="static/img/InvestHubLogo.jpg">
         </div>
-        </div>
-        {% endfor %}
+
+        <a href="#">Кафе лофт</a>
+
+        <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
     </div>
 
 {% endblock %}
