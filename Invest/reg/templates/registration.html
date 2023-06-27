@@ -14,17 +14,13 @@
     <form method="post">
         <div class="reg">
             <h1>Регистрация</h1>
-
-            <label>Я:</label>
-            <input type="radio" name="role" value="applicant" checked> Соискатель
-            <input type="radio" name="role" value="investor"> Инвестор
-            </br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required><br>
+            {% csrf_token %}
+            {{ form.as_p }}
             <input id='regbutton' type="submit" value="Зарегистрироваться"><br>
             <a href="#">Забыли пароль?</a>
+            <p>
+                {{ error }}
+            </p>
         </div>
     </form>
     <div class="enter">
