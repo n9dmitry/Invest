@@ -13,7 +13,7 @@
     <form method="post">
         <div class="authorization">
             <h1>Вход</h1>
-
+            {% csrf_token %}
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br><br>
             <label for="password">Пароль:</label>

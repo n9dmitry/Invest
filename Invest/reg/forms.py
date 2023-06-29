@@ -7,23 +7,11 @@ from django.contrib.auth.forms import UserCreationForm
 #     password = forms.CharField(widget=forms.PasswordInput, label='Пароль')
 
 class RegistrationForm(UserCreationForm):
-    
-    role = forms.ChoiceField(widget=forms.RadioSelect, choices=[('I', 'Investor'),('A', 'Applicant')])
-    password2 = forms.PasswordInput()
+    role = forms.ChoiceField(label='Регистрируюсь как:', widget=forms.RadioSelect, choices=[('И', 'Инвестор'), ('С', 'Соискатель')])
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password2 = forms.CharField(label='Пароль повторно', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
-    class Meta():
+    class Meta:
         model = User
-        fields = ('email','role','password1','password2')
-
-
-    def clean_password2(self):
-        cleaned_data = self.cleaned_data
-
-        password = cleaned_data['password1']
-        password2 = cleaned_data['password2']
-        print(password)
-        if  password or  password2 or password != password2:
-
-            raise forms.ValidationError("Пароли не совпадают")
-
-        return cleaned_data
+        fields = ('email', 'role', 'password1', 'password2')

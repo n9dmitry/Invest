@@ -1,7 +1,7 @@
 from django import forms
-from .models import Ads
+from .models import Ad
 
-class AdsForm(forms.ModelForm):
+class AdForm(forms.ModelForm):
     class Meta:
-        model = Ads
+        model = Ad
         fields = ['title', 'description', 'image']

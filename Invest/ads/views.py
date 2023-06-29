@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.shortcuts import render
 
-def ads(request):
+def ad(request):
     return render(request, 'ads.html')
 
 # def create_ad(request):
