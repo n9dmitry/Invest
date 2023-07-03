@@ -10,13 +10,33 @@
 </head>
 <body>
     <div class="header">
-        <img src="{% static 'Invest/img/InvestHubLogo.jpg' %}" alt="" />
+        <div class="topline">
+            <div class="lefttopline">
+                <ul>
+                    <li>О нас</li>
+                    <li>Поддержка</li>
+
+                </ul>
+            </div>
+            <div class="righttopline">
+                <div>Избранное</div>
+                <div>Сообщения</div>
+                <div>Уведомления</div>
+                <div>Email</div>
+            </div>
+        </div>
+        <div class="searchline"></div>
+
+
+
+
+
     </div>
 
 
     {% block content %}
     {% endblock %}
 
-    <div>Разработано <a href="https://t.me/n9dmitry">DD team</a></div>
+    <div class="developers">Разработано <a href="https://t.me/n9dmitry">DD team</a></div>
 </body>
 </html>
