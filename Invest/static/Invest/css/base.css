@@ -61,7 +61,7 @@ a:-webkit-any-link {
 
 
 
-.righttopline>div {
+.righttopline > div {
     margin: 10px;
     padding-right: 20px;
     display: flex;
@@ -73,7 +73,7 @@ a:-webkit-any-link {
 
 }
 
-.righttopline>div>img {
+.righttopline > div > img {
     width: 40px;
     height: 40px;
 
@@ -96,14 +96,14 @@ a:-webkit-any-link {
     width: 100%;
 }
 
-.searchline>img {
+.searchline > img {
     width: 60px;
     height: 60px;
 
 
 }
 
-.searchline>span {
+.searchline > span {
     color: white;
     font-size: 30px;
     font-family: 'Inter', sans-serif;
@@ -128,7 +128,7 @@ a:-webkit-any-link {
     float: right;
 }
 
-.search>input {
+.search > input {
     width: 300px;
     height: 35px;
     border-radius: 5px;
@@ -138,7 +138,7 @@ a:-webkit-any-link {
     padding-left: 10px;
 }
 
-.search>input::placeholder {
+.search > input::placeholder {
     font-size: 15px;
 }
 
@@ -146,14 +146,14 @@ a:-webkit-any-link {
     height: 37px;
     width: 37px;
     border: none;
-    background-color: white;
+    background-color: #C6A3A8;
     border-radius: 5px;
 }
 
-.findbutton>img {
-    background-color: white;
-    height: 26px;
-    width: 26px;
+.findbutton > img {
+    height: 32px;
+    width: 32px;
+    align-self: center;
 }
 
 .footer {
