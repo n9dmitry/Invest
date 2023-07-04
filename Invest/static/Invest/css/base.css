@@ -63,7 +63,7 @@ a:-webkit-any-link {
 
 
 
-.righttopline>div {
+.righttopline > div {
     margin: 10px;
     padding-right: 20px;
     display: flex;
@@ -75,7 +75,7 @@ a:-webkit-any-link {
 
 }
 
-.righttopline>div>img {
+.righttopline > div > img {
     width: 40px;
     height: 40px;
 
@@ -95,8 +95,14 @@ a:-webkit-any-link {
     background-color: #3C90B8;
     display: flex;
     align-items: center;
-    flex-grow: 1;
     justify-content: space-between;
+
+}
+
+.searchline > img {
+    width: 60px;
+    height: 60px;
+
 }
 
 .container_searchline {
@@ -104,20 +110,24 @@ a:-webkit-any-link {
     align-items: center;
 }
 
-.container_searchline>img {
-    width: 60px;
-    height: 60px;
 
-
+#burger {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
 }
 
-.container_searchline>span {
+#logo {
+    width: 80px;
+    height: 80px;
+}
+
+.container_searchline > span {
     color: white;
     font-size: 30px;
     font-family: 'Inter', sans-serif;
     margin: 0 10px;
 }
-
 .categories {
     align-items: center;
     background-color: #D9D9D9;
@@ -134,19 +144,20 @@ a:-webkit-any-link {
 .search {
     display: inline-flex;
     float: right;
+    margin-right: 20px;
 }
 
-.search>input {
-    width: 300px;
+.search > input {
+    width: 500px;
     height: 35px;
     border-radius: 5px;
     border: none;
     margin-right: 5px;
-    font-size: 15px;
+    font-size: 19px;
     padding-left: 10px;
 }
 
-.search>input::placeholder {
+.search > input::placeholder {
     font-size: 15px;
 }
 
@@ -156,7 +167,7 @@ a:-webkit-any-link {
     border-radius: 5px;
 }
 
-.findbutton>img {
+.findbutton > img {
     height: 32px;
     width: 32px;
     align-self: center;
