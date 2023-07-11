@@ -1,0 +1,57 @@
+/* Стили для левой части экрана */
+.left-section {
+    float: left;
+    width: 30%;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+/* Стили для правой части экрана */
+.right-section {
+    float: right;
+    width: 70%;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.message-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    float: left;
+    margin-right: 10px;
+}
+
+.message-sender {
+    font-weight: bold;
+}
+
+.message-topic {
+    font-weight: bold;
+}

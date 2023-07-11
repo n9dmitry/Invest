@@ -9,6 +9,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/Invest/reg/templates" />
+        <option value="$MODULE_DIR$/Invest/chat/templates" />
       </list>
     </option>
   </component>

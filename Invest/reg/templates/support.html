@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href=" {% static 'Invest/css/support.css' %} ">
+{% endblock %}
+
+{% block title %}
+    FoxInvest - Поддержка
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <p>Если вдруг вы заметили какие-либо проблемы при работе сайта, напишите нам! В скором времени мы устраним проблему </p>
+    <h1>Запрос в техподдержку</h1>
+    <div class="container">
+
+        <form action="submit.php" method="POST">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</body>
+{% endblock %}

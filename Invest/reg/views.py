@@ -23,3 +23,9 @@ def registration(request):
 
 def authorization(request):
     return render(request, 'authorization.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def support(request):
+    return render(request, 'support.html')
