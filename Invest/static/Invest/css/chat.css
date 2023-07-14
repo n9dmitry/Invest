@@ -1,0 +1,83 @@
+/* Стили для левой части экрана */
+.chat {
+    display: flex;
+}
+
+.personal-account > div > a {
+    color: #3C90B8;
+}
+
+.personal-account {
+    float: left;
+    width: 200px;
+    padding-left: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+
+.avatar > img {
+    height: 100px;
+    width: 100px;
+}
+
+
+.name {
+    font-weight: bold;
+}
+
+
+.divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+/* Стили для правой части экрана */
+.message-section {
+    float: right;
+    width: 70%;
+    margin-left: 100px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.message-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    background-color: #00aaff;
+    float: left;
+    margin-right: 10px;
+}
+
+.message-avatar > img  {
+    height: 50px;
+    width: 50px;
+}
+
+.message-sender {
+    font-weight: bold;
+}
+
+.message-sender > a {
+    color: #3C90B8;
+}
+
+.message-topic {
+    font-weight: bold;
+}

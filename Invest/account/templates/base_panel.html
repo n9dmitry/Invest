@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+{% endblock %}
+
+{% block title %}
+    FoxInvest - Мои объявления
+{% endblock %}
+{% block content %}
+
+<div class="main-panel">
+    <div class="personal-account">
+        <div class="avatar"><img src="{% static 'Invest/img/unnamed.jpg' %}"></div>
+        <div class="name">Валера Валера</div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="{% url 'my_a' %}">Мои объявления</a></div>
+        <div class="menu-item"><a href="{% url 'favorite' %}">Избранное</a></div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="{% url 'chat' %}">Сообщения</a></div>
+        <div class="menu-item"><a href="#">Уведомления</a></div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="#">Платные услуги</a></div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="#">Настройки аккаунта</a></div>
+    </div>
+{% block inner_content %}{% endblock %}
+</div>
+
+{% endblock %}
+

@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <title> {% block title %} {% endblock %}</title>
     <link rel="stylesheet" href=" {% static 'Invest/css/base.css' %} ">
-    {% block styles %} {% endblock %}
+    {% block styles %}
+    {% endblock %}
 </head>
 
 <body>
@@ -15,24 +16,33 @@
         <div class="topline">
             <div class="lefttopline">
                 <ul>
-                    <li><a href="{% url 'ad' %}">Главная</a></li>
-                    <li>О нас</li>
-                    <li>Поддержка</li>
+                    <li><a href="{% url 'a' %}">Главная</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'support' %}">Поддержка</a></li>
 
                 </ul>
             </div>
             <div class="righttopline">
                 <div>
-                    <img src="{% static 'Invest/img/righttopline/favourites.svg' %}">
+                    <a href="{% url 'favorite' %}">
+                        <img src="{% static 'Invest/img/righttopline/favourites.svg' %}">
+                    </a>
                     Избранное
+
                 </div>
                 <div>
-                    <img src="{% static 'Invest/img/righttopline/messages.svg' %}">
+                    <a href="{% url 'chat' %}">
+                        <img src="{% static 'Invest/img/righttopline/messages.svg' %}">
+                    </a>
                     Сообщения
+
                 </div>
                 <div>
-                    <img src="{% static 'Invest/img/righttopline/notice.svg' %}">
+                    <a href="#">
+                        <img src="{% static 'Invest/img/righttopline/notice.svg' %}">
+                    </a>
                     Уведомления
+
                 </div>
                 <div class="login">
                     <img src="{% static 'Invest/img/righttopline/avatar.svg' %}">
@@ -69,6 +79,7 @@
 
     {% block content %}
     {% endblock %}
+
     <div class="footer">
         <div class="developers">Разработано <a href="https://t.me/n9dmitry">DD team</a></div>
     </div>

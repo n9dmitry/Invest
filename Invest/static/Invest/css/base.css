@@ -145,10 +145,11 @@ a:-webkit-any-link {
     display: inline-flex;
     float: right;
     margin-right: 20px;
+
 }
 
 .search > input {
-    width: 500px;
+    width: 700px;
     height: 35px;
     border-radius: 5px;
     border: none;
@@ -174,9 +175,10 @@ a:-webkit-any-link {
 }
 
 .footer {
+    margin-top: 200px;
     display: flex;
-    position: fixed;
     bottom: 0;
+    position: absolute;
     background-color: #3C90B8;
     height: 50px;
     width: 100%;
@@ -184,6 +186,5 @@ a:-webkit-any-link {
 
 .developers {
     padding-left: 10px;
-    position: fixed;
     align-self: center;
 }

@@ -2,27 +2,27 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/ads.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/a.css' %} ">
 {% endblock %}
 
 {% block title %}
-    Вход
+    FoxInvest
 {% endblock %}
 
 {% block content %}
-    <div class="ads-space">
-        <div class = "ad">
+    <div class="a-space">
+        <div class = "a">
             <div>
-                <img src="{% static 'Invest/img/adsimg/1/2.jpg' %}">
+                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
             </div>
 
-            <a href="#"> Кафе лофт </a>
+            <a href="{% url 'adinfo' %}"> Кафе лофт </a>
 
             <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
         </div>
-        <div class = "ad">
+        <div class = "a">
             <div>
-                <img src="{% static 'Invest/img/adsimg/1/2.jpg' %}">
+                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
             </div>
 
             <a href="#"> Кафе лофт </a>

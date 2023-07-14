@@ -1,4 +1,4 @@
-.ads-space {
+.a-space {
     display: flex;
     justify-content: inherit;
     align-items: center;
@@ -6,7 +6,7 @@
 
 }
 
-.ad {
+.a {
     width: 300px;
     height: 300px;
     border: 1px solid black;
@@ -15,10 +15,9 @@
     border-radius: 10px;
 }
 
-.ad > div > img {
+.a > div > img {
     height: 200px;
-    width: 200px;
-    display: block;
+    width: 300px;
 }
 
 a:-webkit-any-link {

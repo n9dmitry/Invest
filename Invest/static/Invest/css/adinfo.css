@@ -1,0 +1,72 @@
+.details {
+    display: flex;
+}
+
+.addtofavorite {
+    margin: 10px;
+}
+
+.adinfo {
+    margin-left: 100px;
+    margin-bottom: 100px;
+    width: 55%;
+}
+
+.adinfo > img {
+    width: 800px;
+    height: 400px;
+}
+
+.adinfo > h1 {
+    margin-left: 10px;
+}
+
+/*.adinfo > p {*/
+/*    margin: 10px;*/
+/*}*/
+
+/*.contacts {*/
+/*    margin-top: 40px;*/
+/*}*/
+
+/*.message > button, .showcontacts > button {*/
+/*    height: 66px;*/
+/*    width: 308px;*/
+/*    background-color: #00aaff;*/
+/*    border: none;*/
+/*    font-size: 18px;*/
+/*    color: white;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.showcontacts > button {*/
+/*    background-color: #02d15c;*/
+/*}*/
+
+/*.userinfo {*/
+/*}*/
+
+/*.username {*/
+/*    margin: 50px 0;*/
+/*    font-size: 18px;*/
+/*    float: left;*/
+/*}*/
+/*.avatar > img {*/
+/*    float: right;*/
+/*    margin-top: 15px;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
+
+/*.othera > button {*/
+/*    width: 308px;*/
+/*    height: 32px;*/
+/*    background-color: #f2efe9;*/
+/*    font-size: 13px;*/
+/*}*/
+
+
+/*.contacts {*/
+/*    display: block;*/
+/*    flex-direction: column;*/
+/*}*/

@@ -14,7 +14,7 @@ def registration(request):
 
         if form.is_valid():
             form.save()
-            return redirect('ads')
+            return redirect('a')
         else:
             form = RegistrationForm()
             return render(request, 'registration.html', {'error':form.error_messages,'form':form})
@@ -23,3 +23,9 @@ def registration(request):
 
 def authorization(request):
     return render(request, 'authorization.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def support(request):
+    return render(request, 'support.html')

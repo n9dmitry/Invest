@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'reg',
-    'ads',
+    'a',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Invest',
         'USER': 'postgres',
-        'PASSWORD': '666666',
+        'PASSWORD': 'Access777',
         'HOST': 'localhost',
         'PORT': '5432',
     }
