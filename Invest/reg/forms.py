@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 #     password = forms.CharField(widget=forms.PasswordInput, label='Пароль')
 
 class RegistrationForm(UserCreationForm):
-    role = forms.ChoiceField(label='Регистрируюсь как:', widget=forms.RadioSelect, choices=[('И', 'Инвестор'), ('С', 'Соискатель')])
+    role = forms.ChoiceField(label='Меня больше интересует:', widget=forms.RadioSelect, choices=[('И', 'Инвестиции'), ('П', 'Привлечение денег в свои проекты')])
     name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-control'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control'}))

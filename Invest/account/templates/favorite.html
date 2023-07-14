@@ -1,0 +1,38 @@
+{% extends 'base_panel.html'%}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/favorite.css' %} ">
+{% endblock %}
+
+{% block title %}
+    FoxInvest
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="a-space">
+        <div class = "a">
+            <div>
+                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
+            </div>
+
+            <a href="{% url 'adinfo' %}"> Кафе лофт </a>
+
+            <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
+        </div>
+        <div class = "a">
+            <div>
+                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
+            </div>
+
+            <a href="#"> Кафе лофт </a>
+
+            <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
+        </div>
+
+    </div>
+
+{% endblock %}
+
