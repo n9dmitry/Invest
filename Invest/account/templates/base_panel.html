@@ -19,11 +19,11 @@
         <div class="menu-item"><a href="{% url 'favorite' %}">Избранное</a></div>
         <div class="divider"></div>
         <div class="menu-item"><a href="{% url 'chat' %}">Сообщения</a></div>
-        <div class="menu-item"><a href="#">Уведомления</a></div>
+        <div class="menu-item"><a href="{% url 'notifications' %}">Уведомления</a></div>
         <div class="divider"></div>
-        <div class="menu-item"><a href="#">Платные услуги</a></div>
+        <div class="menu-item"><a href="{% url 'pay_services' %}">Платные услуги</a></div>
         <div class="divider"></div>
-        <div class="menu-item"><a href="#">Настройки аккаунта</a></div>
+        <div class="menu-item"><a href="{% url 'account_settings' %}">Настройки аккаунта</a></div>
     </div>
 {% block inner_content %}{% endblock %}
 </div>

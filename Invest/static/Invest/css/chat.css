@@ -10,7 +10,7 @@
 .personal-account {
     float: left;
     width: 200px;
-    padding-left: 20px;
+
 }
 
 .avatar {
@@ -45,7 +45,6 @@
 .message-section {
     float: right;
     width: 70%;
-    margin-left: 100px;
 }
 
 .title {

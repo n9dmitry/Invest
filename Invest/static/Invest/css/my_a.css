@@ -1,0 +1,104 @@
+.green-button {
+  background-color: #4CAF50; /* Зеленый цвет */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.green-button:hover {
+  background-color: #45a049; /* Изменение цвета при наведении курсора */
+}
+
+/*////////////////////*/
+.ad-block {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.a_options {
+  display: flex;
+  justify-content: flex-start;
+}
+/*Разметка полей с названиями метрик*/
+
+.span_photo {
+  border-right: 1px solid #000;
+  padding: 0 20px;
+}
+
+.span_title {
+  border-right: 1px solid #000;
+  padding: 0 100px;
+}
+
+.span_views {
+  border-right: 1px solid #000;
+  padding: 0 20px;
+}
+
+.span_contactviews {
+  border-right: 1px solid #000;
+  padding: 0 20px;
+}
+
+.span_addtofavorite {
+  border-right: 1px solid #000;
+  padding: 0 20px;
+}
+
+.span_actions {
+  border-right: 1px solid #000;
+  padding: 0 20px;
+}
+
+.span_status {
+  padding: 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+.ad-image {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+}
+
+.short_description {
+  display: flex;
+}
+
+
+.ad-details {
+  vertical-align: top;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ad-actions {
+  display: flex;
+}
+
+.ad-actions button {
+  margin-right: 5px;
+}
+
+.ad-details > span {
+  margin-right: 50px;
+}

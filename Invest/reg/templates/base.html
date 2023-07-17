@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <div class="header">
         <div class="topline">
             <div class="lefttopline">
@@ -38,7 +39,7 @@
 
                 </div>
                 <div>
-                    <a href="#">
+                    <a href="{% url 'notifications' %}">
                         <img src="{% static 'Invest/img/righttopline/notice.svg' %}">
                     </a>
                     Уведомления
@@ -75,13 +76,14 @@
 
 
     </div>
+    <div class="main-container">
 
+        {% block content %}
+        {% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
-    <div class="footer">
-        <div class="developers">Разработано <a href="https://t.me/n9dmitry">DD team</a></div>
+        <div class="footer">
+            <div class="developers">Разработано <a href="https://t.me/n9dmitry">DD team</a></div>
+        </div>
     </div>
 </body>
 

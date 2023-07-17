@@ -1,6 +1,7 @@
 /* Стили для левой части экрана */
 .main-panel {
     display: flex;
+    padding-right: 100px;
 }
 
 .personal-account > div > a {
@@ -11,6 +12,7 @@
     float: left;
     width: 200px;
     padding-left: 20px;
+    padding-right: 50px
 }
 
 .avatar {

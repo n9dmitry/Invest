@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/chat.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/my_a.css' %} ">
 {% endblock %}
 
 {% block title %}
@@ -11,12 +12,65 @@
 
 {% block inner_content %}
 
-    <div class="message-section">
-        <div class="title"><h2>Мои объявления</h2></div>
+<div class="message-section">
+    <div class="title"><h2>Мои объявления</h2></div>
+    <button class="green-button">Добавить объявление</button>
 
-        </div>
-        <!-- Добавьте другие сообщения здесь -->
+
+    <!-- Добавьте другие сообщения здесь -->
+
+<div class="ad-block">
+    <div class="a_options">
+      <span class="span_photo">Фото</span>
+      <span class="span_title">Название</span>
+      <span class="span_views">Просмотров</span>
+      <span class="span_contactviews">Запрос </br> контактов</span>
+      <span class="span_addtofavorite">Добавленно </br> в избранное</span>
+      <span class="span_actions">Действие</span>
+      <span class="span_status">Статус</span>
     </div>
+  </div>
+
+  <div class="ad-block">
+    <div class="ad-image">
+      <img src="#" alt="Фото">
+    </div>
+    <div class="ad-details">
+      <span>Тестовое объявление 1</span>
+      <span>100 просмотров</span>
+      <span>5 запросов</span>
+      <span>В избранное: 10</span>
+      <div class="ad-actions">
+        <button>Редактировать</button>
+        <button>Активировать</button>
+        <button>Удалить</button>
+        <button>Поднять</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-block">
+    <div class="ad-image"></div>
+    <div class="ad-details">
+      <span>Тестовое объявление 2</span>
+      <span>50 просмотров</span>
+      <span>3 запроса</span>
+      <span>В избранное: 5</span>
+      <div class="ad-actions">
+        <button>Редактировать</button>
+        <button>Активировать</button>
+        <button>Удалить</button>
+        <button>Сделать VIP</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!--    Див нужный -->
+</div>
 
 
 

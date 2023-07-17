@@ -11,3 +11,12 @@ def favorite(request):
 
 def base_panel(request):
     return render(request, 'base_panel.html')
+
+def notifications(request):
+    return render(request, 'notifications.html')
+
+def pay_services(request):
+    return render(request, 'pay_services.html')
+
+def account_settings(request):
+    return render(request, 'account_settings.html')

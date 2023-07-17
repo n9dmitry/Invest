@@ -1,0 +1,22 @@
+{% extends 'base_panel.html'%}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/pay_services.css' %} ">
+{% endblock %}
+
+{% block title %}
+    FoxInvest
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="message-section">
+    <div class="title"><h2>Платные услуги</h2></div>
+    </br></br></br>
+    <div class="title"><h3>> Заказать платный аккаунт, чтобы видеть все предложения для VIP инвесторов</h3></div>
+    <div class="title"><h3>> Заказать продвижение своего объявления, и поднятие его в Топ на сутки </h3></div>
+    <div class="title"><h3>По всем вопросам обращайтесь в наш чат, мы с радостью поможем вам!</h3></div>
+</div>
+{% endblock %}

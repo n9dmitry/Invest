@@ -51,7 +51,7 @@ form > div > input {
 .general {
     display: flex;
     flex-direction: row;
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
     padding-left: 50px;
     justify-content: center;
     align-items: center;

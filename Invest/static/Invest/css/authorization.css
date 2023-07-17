@@ -2,12 +2,14 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    /*margin-bottom: 150px;*/
 }
 
 .authorization {
     font-size: 18px;
     width: fit-content;
     color: #855E5E;
+
 }
 
 #enterbutton {
