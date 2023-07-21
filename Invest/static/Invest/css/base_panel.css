@@ -1,7 +1,7 @@
 /* Стили для левой части экрана */
 .main-panel {
     display: flex;
-    padding-right: 100px;
+    padding-right: 50px;
 }
 
 .personal-account > div > a {

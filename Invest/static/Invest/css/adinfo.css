@@ -1,19 +1,21 @@
 .details {
     display: flex;
+    width: 80%;
+    margin: 0 200px 50px auto;
 }
 
 .addtofavorite {
     margin: 10px;
 }
 
-.adinfo {
-    margin-left: 100px;
-    width: 55%;
-}
+/*.adinfo {*/
+/*    margin-bottom: 50px;*/
+/*}*/
 
 .adinfo > img {
     width: 800px;
     height: 400px;
+    padding-right: 20px;
 }
 
 .adinfo > h1 {

@@ -15,62 +15,32 @@
   background-color: #45a049; /* Изменение цвета при наведении курсора */
 }
 
-/*////////////////////*/
+
+.main-section {
+    border: 1px solid #ccc;
+
+}
+
 .ad-block {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    border: 1px solid #ccc;
+    /*padding: 10px;*/
+    /*margin-top: 10px;*/
+    /*margin-bottom: 10px;*/
 }
 
 .a_options {
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 10% 30% 15% 15% 10% 10% 15px;
+
 }
 /*Разметка полей с названиями метрик*/
-
-.span_photo {
+.a_options > span {
   border-right: 1px solid #000;
-  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
-
-.span_title {
-  border-right: 1px solid #000;
-  padding: 0 100px;
-}
-
-.span_views {
-  border-right: 1px solid #000;
-  padding: 0 20px;
-}
-
-.span_contactviews {
-  border-right: 1px solid #000;
-  padding: 0 20px;
-}
-
-.span_addtofavorite {
-  border-right: 1px solid #000;
-  padding: 0 20px;
-}
-
-.span_actions {
-  border-right: 1px solid #000;
-  padding: 0 20px;
-}
-
-.span_status {
-  padding: 0 20px;
-}
-
-
-
-
-
-
-
-
-
 
 .ad-image {
   display: inline-block;
@@ -85,10 +55,12 @@
 
 
 .ad-details {
+  margin-top: 10px;
   vertical-align: top;
   margin-left: 10px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 10% 30% 15% 15% 10% 10% 15px;
+  border: 1px solid #000;
 }
 
 .ad-actions {
@@ -99,6 +71,7 @@
   margin-right: 5px;
 }
 
-.ad-details > span {
-  margin-right: 50px;
-}
+/*.ad-details > span, .ad-details > div {*/
+/*    border-right: 1px solid #000;*/
+/*}*/
+
