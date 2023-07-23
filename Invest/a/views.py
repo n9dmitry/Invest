@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 
 from django.shortcuts import render
 
-def a(request):
-    return render(request, 'a.html')
+def item(request):
+    return render(request, 'item.html')
 
-def adinfo(request):
-    return render(request, 'adinfo.html')
+def iteminfo(request):
+    return render(request, 'iteminfo.html')

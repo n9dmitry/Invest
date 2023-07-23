@@ -1,10 +1,13 @@
 body {
     font-family: Arial, sans-serif;
 }
+.main-container {
+    min-height: 80vh;
+}
 
 .container {
     max-width: 500px;
-    margin: 0 30%;
+    margin: 0 30% 50px;
     padding: 20px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;

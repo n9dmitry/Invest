@@ -19,7 +19,3 @@
     height: 200px;
     width: 300px;
 }
-
-a:-webkit-any-link {
-    color: blue;
-}

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/a.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/item.css' %} ">
 {% endblock %}
 
 {% block title %}
@@ -10,22 +10,26 @@
 {% endblock %}
 
 {% block content %}
-    <div class="a-space">
-        <div class = "a">
-            <div>
-                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
-            </div>
+    <div class="item-space">
+        <div class = "item">
 
-            <a href="{% url 'adinfo' %}"> Кафе лофт </a>
+            <a href="{% url 'iteminfo' %}">
+                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
+            </a>
+
+
+            <a href="{% url 'iteminfo' %}"> Кафе лофт </a>
 
             <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
         </div>
-        <div class = "a">
-            <div>
-                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
-            </div>
+        <div class = "item">
 
-            <a href="#"> Кафе лофт </a>
+            <a href="{% url 'iteminfo' %}">
+                <img src="{% static 'Invest/img/aimg/1/2.jpg' %}">
+            </a>
+
+
+            <a href="{% url 'iteminfo' %}"> Кафе лофт </a>
 
             <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
         </div>

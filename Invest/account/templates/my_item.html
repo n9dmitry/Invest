@@ -3,7 +3,7 @@
 
 {% block styles %}
     <link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
-    <link rel="stylesheet" href=" {% static 'Invest/css/my_a.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/my_item.css' %} ">
 {% endblock %}
 
 {% block title %}
@@ -24,8 +24,8 @@
       <span class="span_photo">Фото</span>
       <span class="span_title">Название</span>
       <span class="span_views">Просмотров</span>
-      <span class="span_addtofavorite">Добавленно в избранное</span>
-      <span class="span_contactviews">Запрос контактов</span>
+      <span class="span_addtofavorite">В избранном</span>
+      <span class="span_contactviews">Контакты</span>
       <span class="span_actions">Действие</span>
       <span class="span_status">Статус</span>
     </div>
@@ -34,21 +34,22 @@
   <div class="ad-block">
     <div class="ad-details">
         <div class="ad-image">
-            <img src="#" alt="Фото">
+            <img src="{% static 'Invest/img/aimg/1/2.jpg' %}" alt="Фото">
         </div>
-            <span>Тестовое объявление 1</span>
-            <span>100</span>
-            <span>10</span>
-            <span>5</span>
-        <div class="ad-actions">
+        <span>Тестовое объявление 1</span>
+        <span>100</span>
+        <span>10</span>
+        <span>5</span>
+
             <div class="actions">
                 <button>Редактировать</button>
                 <button>Деактивировать</button>
                 <button>Поднять</button>
                 <button>Удалить</button>
             </div>
-            <span>Опубликовано</span>
-        </div>
+
+
+        <span>Опубликовано</span>
     </div>
     <div class="ad-details">
         <div class="ad-image">
@@ -58,15 +59,16 @@
         <span>32</span>
         <span>5</span>
         <span>1</span>
-        <div class="ad-actions">
+
             <div class="actions">
                 <button>Редактировать</button>
                 <button>Активировать</button>
                 <button>Поднять</button>
                 <button>Удалить</button>
             </div>
-            <span>Ожидает публикации</span>
-        </div>
+
+
+        <span>Ожидает публикации</span>
     </div>
   </div>
 

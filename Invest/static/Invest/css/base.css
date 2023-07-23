@@ -5,13 +5,13 @@ body {
     /*position: relative;*/
 }
 
-a:-webkit-any-link:active {
-    color: white;
-}
+/*a:active {*/
+/*    color: white;*/
+/*}*/
 
-a:-webkit-any-link {
-    color: white;
-}
+/*a {*/
+/*    color: white;*/
+/*}*/
 
 .header {
     height: 185px;
@@ -195,4 +195,8 @@ a:-webkit-any-link {
 .developers {
     padding-left: 10px;
     align-self: center;
+}
+
+.developers>a {
+    color: white;
 }

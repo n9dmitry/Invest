@@ -1,4 +1,4 @@
-.a-space {
+.item-space {
     display: flex;
     justify-content: inherit;
     align-items: center;
@@ -6,20 +6,15 @@
 
 }
 
-.a {
+.item {
     width: 300px;
     height: 300px;
-    border: 1px solid black;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
 }
 
-.a > div > img {
+.item > a > img {
     height: 200px;
     width: 300px;
-}
-
-a:-webkit-any-link {
-    color: blue;
 }
