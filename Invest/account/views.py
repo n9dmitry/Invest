@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 def chat(request):
     return render(request, 'chat.html')
-
+def messenger(request):
+    return render(request, 'messenger.html')
 def my_item(request):
     return render(request, 'my_item.html')
 

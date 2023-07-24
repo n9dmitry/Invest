@@ -1,0 +1,37 @@
+.messenger {
+    width: 100%;
+}
+
+.messenger-header {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: initial;
+    border: 1px solid black;
+}
+
+.back-button {
+
+}
+
+.sender-info {
+    margin-left: 20px;
+}
+
+.sender-info > img {
+    height: 40px;
+    width: 60px;
+}
+
+.dialogue-box {
+    height: 100%;
+}
+
+.message-panel {
+    display: flex;
+    justify-content: end;
+}
+
+.message-input {
+    height: 30px;
+    width: 50%;
+}

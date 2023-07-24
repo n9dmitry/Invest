@@ -14,8 +14,8 @@
     <div class="message-section">
         <div class="title"><h2>Сообщения</h2></div>
         <div class="message">
-            <a href="#"><div class="message-avatar"><img src="{% static 'Invest/img/aimg/1/2.jpg' %}"></div></a>
-            <div class="message-sender"><a href="#">Игнат</a></div>
+            <a href="{% url 'messenger' %}"><div class="message-avatar"><img src="{% static 'Invest/img/aimg/1/2.jpg' %}"></div></a>
+            <div class="message-sender"><a href="{% url 'messenger' %}">Игнат</a></div>
             <div class="message-topic">Кафе лофт</div>
             <div>По поводу кафе, вас заинтересовало наше предложение?</div>
         </div>

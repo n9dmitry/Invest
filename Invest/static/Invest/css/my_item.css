@@ -17,7 +17,6 @@
 
 
 .main-section {
-  border: 1px solid #ccc;
   width: 80%;
 }
 
@@ -26,27 +25,26 @@
   margin: 10px 0;
 }
 
-.a_options, .ad-details {
+.item_options, .item-details {
   display: grid;
-  grid-template-columns: 10% 25% 10% 10% 10% 12% 23%;
+  grid-template-columns: 15% 25% 25% 20% 12%;
 
 }
 /*Разметка полей с названиями метрик*/
-.a_options > span {
+.item_options > span {
   border-right: 1px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
-.a_options > .span_status {
+.item_options > .span_contactviews {
   border-right: none;
 }
 
-.ad-image {
+.item-image {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 100%;
   background-color: #eee;
 }
 
@@ -55,18 +53,22 @@
 }
 
 
-.ad-details {
+.item-details {
   margin-top: 10px;
   vertical-align: top;
-  margin-left: 10px;
-  border: 1px solid #000;
+  background-color: #eeeeee;
   align-items: center;
   text-align: center;
 }
+.item-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.ad-image > img {
-  height: 60px;
-  width: 100px;
+.item-image > img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .actions {
@@ -75,7 +77,7 @@
 }
 
 .actions button {
-  /*margin-right: 5px;*/
+  width: 110px;
   margin: 2px;
 }
 

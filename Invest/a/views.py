@@ -7,3 +7,6 @@ def item(request):
 
 def iteminfo(request):
     return render(request, 'iteminfo.html')
+
+def additem(request):
+    return render(request, 'additem.html')
