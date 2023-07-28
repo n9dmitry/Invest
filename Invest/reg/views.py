@@ -14,7 +14,7 @@ def registration(request):
 
         if form.is_valid():
             form.save()
-            return redirect('a')
+            return redirect('item')
         else:
             form = RegistrationForm()
             return render(request, 'registration.html', {'error':form.error_messages,'form':form})
