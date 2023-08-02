@@ -8,6 +8,11 @@
     color: #3C90B8;
 }
 
+.personal-account > div > a > p:hover{
+    transform: scale(1.02);
+    transition: transform 0.3s
+}
+
 .personal-account {
     float: left;
     width: 200px;

@@ -2,26 +2,22 @@ html,
 body {
     margin: 0;
     padding: 0;
-    /*position: relative;*/
 }
 
-/*item:active {*/
-/*    color: white;*/
-/*}*/
-
-/*item {*/
-/*    color: white;*/
-/*}*/
+a:hover, li:hover, .login-links > a > p:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s
+}
 
 .header {
-    height: 185px;
+    /*height: 185px;*/
     width: auto;
     display: flex;
     flex-direction: column;
 }
 
 .topline {
-    height: 85px;
+    height: 65px;
     background-color: #434343;
     display: flex;
     justify-content: space-between;
@@ -65,8 +61,7 @@ body {
 
 
 .righttopline > div {
-    margin: 10px;
-    padding-right: 20px;
+    padding-right: 30px;
     display: flex;
     justify-content: flex-end;
     color: white;
@@ -77,22 +72,32 @@ body {
 }
 
 .righttopline > div > img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+}
 
+.favorite_icon > a > img, .chat_icon > a > img, .notifications_icon > a > img {
+    width: 25px;
 }
 
 .login {
     align-items: inherit;
     display: flex;
+    margin: 3px;
+    padding: 5px 20px;
 }
 
 .login-links {
-    display: inline-block;
+    display: flex;
 }
 
+.login-links > a > p {
+    margin: 0 3px;
+}
+
+
 .searchline {
-    height: 90px;
+    height: 65px;
     background-color: #3C90B8;
     display: flex;
     align-items: center;
@@ -119,8 +124,8 @@ body {
 }
 
 #logo {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 }
 
 .container_searchline > span {
@@ -146,6 +151,7 @@ body {
     display: inline-flex;
     float: right;
     margin-right: 20px;
+    width: 50%;
 
 }
 

@@ -2,9 +2,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-# class LoginForm(forms.Form):
-#     username = forms.CharField(label='Имя пользователя')
-#     password = forms.CharField(widget=forms.PasswordInput, label='Пароль')
+# from Invest.reg.models import Profile
+
 
 class RegistrationForm(UserCreationForm):
     interest = forms.ChoiceField(label='Меня больше интересует:', widget=forms.RadioSelect, choices=[('И', 'Инвестиции'), ('П', 'Привлечение денег в свои проекты')])
@@ -16,3 +15,11 @@ class RegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('email', 'name', 'interest', 'password1', 'password2')
+
+    # def save(self, commit=True):
+    #     user = super().save(commit=commit)
+    #     profile = Profile(user=user)
+    #     if commit:
+    #         profile.save()
+    #
+    #     return user

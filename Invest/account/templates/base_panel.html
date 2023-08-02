@@ -15,15 +15,15 @@
         <div class="avatar"><img src="{% static 'Invest/img/unnamed.jpg' %}"></div>
         <div class="name">Валера Валера</div>
         <div class="divider"></div>
-        <div class="menu-item"><a href="{% url 'my_item' %}">Мои объявления</a></div>
-        <div class="menu-item"><a href="{% url 'favorite' %}">Избранное</a></div>
+        <div class="menu-item"><a href="{% url 'my_item' %}"><p>Мои объявления</p></a></div>
+        <div class="menu-item"><a href="{% url 'favorite' %}"><p>Избранное</p></a></div>
         <div class="divider"></div>
-        <div class="menu-item"><a href="{% url 'chat' %}">Сообщения</a></div>
-        <div class="menu-item"><a href="{% url 'notifications' %}">Уведомления</a></div>
+        <div class="menu-item"><a href="{% url 'chat' %}"><p>Сообщения</p></a></div>
+        <div class="menu-item"><a href="{% url 'notifications' %}"><p>Уведомления</p></a></div>
         <div class="divider"></div>
-        <div class="menu-item"><a href="{% url 'pay_services' %}">Платные услуги</a></div>
+        <div class="menu-item"><a href="{% url 'pay_services' %}"><p>Платные услуги</p></a></div>
         <div class="divider"></div>
-        <div class="menu-item"><a href="{% url 'account_settings' %}">Настройки аккаунта</a></div>
+        <div class="menu-item"><a href="{% url 'account_settings' %}"><p>Настройки аккаунта</p></a></div>
     </div>
 {% block inner_content %}{% endblock %}
 </div>

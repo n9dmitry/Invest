@@ -24,32 +24,30 @@
                 </ul>
             </div>
             <div class="righttopline">
-                <div>
+                <div class="favorite_icon">
                     <a href="{% url 'favorite' %}">
                         <img src="{% static 'Invest/img/righttopline/favourites.svg' %}">
                     </a>
-                    Избранное
 
                 </div>
-                <div>
+                <div class="chat_icon">
                     <a href="{% url 'chat' %}">
                         <img src="{% static 'Invest/img/righttopline/messages.svg' %}">
                     </a>
-                    Сообщения
 
                 </div>
-                <div>
+                <div class="notifications_icon">
                     <a href="{% url 'notifications' %}">
                         <img src="{% static 'Invest/img/righttopline/notice.svg' %}">
                     </a>
-                    Уведомления
 
                 </div>
                 <div class="login">
                     <img src="{% static 'Invest/img/righttopline/avatar.svg' %}">
                     <div class="login-links">
-                        <a href="{% url 'authorization' %}">Вход</a> |
-                        <a href="{% url 'registration' %}">Регистрация</a>
+                        <a href="{% url 'authorization' %}"><p>Вход</p></a>
+                        <a>|</a>
+                        <a href="{% url 'registration' %}"><p>Регистрация</p></a>
                     </div>
                 </div>
             </div>
@@ -70,12 +68,8 @@
 
             </div>
         </div>
-
-
-
-
-
     </div>
+
     <div class="main-container">
 
         {% block content %}
