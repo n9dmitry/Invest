@@ -6,7 +6,17 @@
 
 .document-confirm {
     display: flex;
-    background-color: #4CAF50;
-    width: 30%;
+    background-color: #b6e9ee;
+    width: 28%;
     margin: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.document-confirm > img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
 }
