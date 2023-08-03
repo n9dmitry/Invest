@@ -56,7 +56,7 @@
                     </div>
                     {% else %}
                     <div class="logo-links">
-                        <a href="{% url 'account_settings' %}">{{ request.user }}</a>
+                        <a href="{% url 'account_settings' %}">{{ request.user.email }}</a>
                     </div>
                     {% endif %}
                 </div>
