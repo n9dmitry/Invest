@@ -191,10 +191,7 @@ a:hover, li:hover, .login-links > a > p:hover {
 }
 
 .footer {
-    /*margin-top: 200px;*/
     display: flex;
-    /*position: absolute;*/
-    /*bottom: 0;*/
     background-color: #3C90B8;
     height: 50px;
     width: 100%;
