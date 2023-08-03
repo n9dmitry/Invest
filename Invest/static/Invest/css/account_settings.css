@@ -5,5 +5,8 @@
 }
 
 .document-confirm {
+    display: flex;
     background-color: #4CAF50;
+    width: 30%;
+    margin: 20px;
 }
