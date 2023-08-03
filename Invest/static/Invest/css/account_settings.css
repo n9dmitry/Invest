@@ -7,16 +7,33 @@
 .document-confirm {
     display: flex;
     background-color: #b6e9ee;
-    width: 28%;
-    margin: 20px;
+    width: 20%;
+    margin: 10px;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+}
 
+.document-confirm > p {
+    font-size: 12px;
 }
 
 .document-confirm > img {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.not_verified {
+    display: flex;
+    background-color: #e14e76;
+    width: 20%;
+    margin: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.not_verified > p {
+    font-size: 12px;
 }
