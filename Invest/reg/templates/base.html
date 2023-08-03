@@ -17,7 +17,7 @@
         <div class="topline">
             <div class="lefttopline">
                 <ul>
-                    <li><a href="{% url 'item' %}">Главная</a></li>
+                    <li><a href="{% url 'all_items' %}">Главная</a></li>
                     <li><a href="{% url 'about' %}">О нас</a></li>
                     <li><a href="{% url 'support' %}">Поддержка</a></li>
 
@@ -43,12 +43,22 @@
 
                 </div>
                 <div class="login">
+                    {% if request.user.is_authenticated == False %}
                     <img src="{% static 'Invest/img/righttopline/avatar.svg' %}">
                     <div class="login-links">
-                        <a href="{% url 'authorization' %}"><p>Вход</p></a>
+                        <a href="{% url 'authorization' %}">
+                            <p>Вход</p>
+                        </a>
                         <a>|</a>
-                        <a href="{% url 'registration' %}"><p>Регистрация</p></a>
+                        <a href="{% url 'registration' %}">
+                            <p>Регистрация</p>
+                        </a>
                     </div>
+                    {% else %}
+                    <div class="logo-links">
+                        <a href="{% url 'account_settings' %}">{{ request.user }}</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
