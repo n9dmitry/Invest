@@ -16,17 +16,9 @@ class Item(models.Model):
     required_investment = models.IntegerField()
     profit_per_month = models.CharField(max_length=255, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
+
     def __str__(self):
         return str(self.title)
-
-
-class ItemImage(models.Model):
-    item_id = models.IntegerField()
-    path = models.CharField(max_length=255)
-
-    def __str__(self):
-        return f"ItemImage {self.id}"
 
 
 class ItemStatistics(models.Model):
