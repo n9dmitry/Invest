@@ -6,6 +6,14 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+class Category(models.Model):
+    """
+        Категория для объявления
+    """
+    title = models.CharField(max_length=220)
+    parent_category = models.ForeignKey('self', on_delete=models.CASCADE)
+
+
 class Item(models.Model):
     """
         Проект от пользователя
@@ -16,6 +24,7 @@ class Item(models.Model):
     required_investment = models.IntegerField()
     profit_per_month = models.CharField(max_length=255, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category)
 
     def __str__(self):
         return str(self.title)
@@ -28,12 +37,3 @@ class ItemStatistics(models.Model):
 
     def __str__(self):
         return f"ItemStatistics {self.id}"
-
-
-class ItemCategory(models.Model):
-    title = models.CharField(max_length=255)
-    item_id = models.IntegerField()
-    parent_category_id = models.IntegerField(null=True, blank=True)
-
-    def __str__(self):
-        return f"ItemCategory {self.id}"
