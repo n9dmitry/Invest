@@ -11,7 +11,11 @@ class Category(models.Model):
         Категория для объявления
     """
     title = models.CharField(max_length=220)
-    parent_category = models.ForeignKey('self', on_delete=models.CASCADE)
+    parent_category = models.ForeignKey(
+        'Category', on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self) -> str:
+        return str(self.title)
 
 
 class Item(models.Model):
@@ -31,9 +35,24 @@ class Item(models.Model):
 
 
 class ItemStatistics(models.Model):
-    item_id = models.IntegerField()
+    """
+        Модель для статистики объявления
+    """
+    item_id = models.OneToOneField(Item, on_delete=models.CASCADE)
     count_view = models.IntegerField()
     count_phone_number = models.IntegerField()
 
     def __str__(self):
-        return f"ItemStatistics {self.id}"
+        return str(f"ItemStatistics {self.id}")
+
+
+def save_image(instance, filename):
+    return '/'.join([str(instance.id), filename])
+
+
+class ItemImage(models.Model):
+    """
+        Модель для картинок объявлений
+    """
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=save_image, blank=True, null=True)

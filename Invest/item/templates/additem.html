@@ -2,52 +2,52 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/additem.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/additem.css' %} ">
 {% endblock %}
 
 {% block title %}
-    Добавить объявление
+Добавить объявление
 {% endblock %}
 
 {% block content %}
 <div class="additem ">
     <h1>Добавление объявления</h1>
     <form action="/submit_ad" method="post">
-    <label for="category">Категория:</label>
-    <select id="category" name="category">
-        <option value="автобизнес">Автобизнес</option>
-        <option value="информация_связь">Информация и связь</option>
-        <option value="it">IT , web, интернет</option>
-        <option value="добыча_ископаемых">Добыча полезных ископаемых</option>
-        <option value="финансы_страхование">Финансы и страхование</option>
-        <option value="франчайзинг">Франчайзинг</option>
-        <option value="гостиничная_индустрия">Гостиничная индустрия</option>
-        <option value="культура_спорт_развлечения">Культура, спорт, организации досуга и развлечений</option>
-        <option value="медицинский_бизнес">Медицина</option>
-        <option value="наука">Наука</option>
-        <option value="недвижимость">Недвижимость</option>
-        <option value="образование">Образование</option>
-        <option value="общественное_питание">Общественное питание</option>
-        <option value="организации_сбор_утилизация_отходов">Организации сбора и утилизации отходов</option>
-        <option value="производство">Производство</option>
-        <option value="прочие_деятельности">Прочие виды деятельности</option>
-        <option value="реклама_pr">Реклама и PR</option>
-        <option value="строительство">Строительство</option>
-        <option value="торговля">Торговля</option>
-        <option value="транспортировка">Транспортировка</option>
-        <option value="услуги">Услуги</option>
-        <option value="индустрия_красоты">Красота</option>
+        <label for="category">Категория:</label>
+        <select id="category" name="category">
+            <option value="1">Автобизнес</option>
+            <option value="информация_связь">Информация и связь</option>
+            <option value="it">IT , web, интернет</option>
+            <option value="добыча_ископаемых">Добыча полезных ископаемых</option>
+            <option value="финансы_страхование">Финансы и страхование</option>
+            <option value="франчайзинг">Франчайзинг</option>
+            <option value="гостиничная_индустрия">Гостиничная индустрия</option>
+            <option value="культура_спорт_развлечения">Культура, спорт, организации досуга и развлечений</option>
+            <option value="медицинский_бизнес">Медицина</option>
+            <option value="наука">Наука</option>
+            <option value="недвижимость">Недвижимость</option>
+            <option value="образование">Образование</option>
+            <option value="общественное_питание">Общественное питание</option>
+            <option value="организации_сбор_утилизация_отходов">Организации сбора и утилизации отходов</option>
+            <option value="производство">Производство</option>
+            <option value="прочие_деятельности">Прочие виды деятельности</option>
+            <option value="реклама_pr">Реклама и PR</option>
+            <option value="строительство">Строительство</option>
+            <option value="торговля">Торговля</option>
+            <option value="транспортировка">Транспортировка</option>
+            <option value="услуги">Услуги</option>
+            <option value="индустрия_красоты">Красота</option>
 
-        <!-- Добавьте остальные категории по алфавиту -->
-    </select>
+            <!-- Добавьте остальные категории по алфавиту -->
+        </select>
 
-    <label for="title">Название:</label>
-    <input type="text" id="title" name="title" required>
+        <label for="title">Название:</label>
+        <input type="text" id="title" name="title" required>
 
-    <label for="description">Описание:</label>
-    <textarea id="description" name="description" rows="4" required></textarea>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
 
-    <label class="photo-label">Фото:</label>
+        <label class="photo-label">Фото:</label>
         <div class="photo-grid">
             <div class="photo-cell">
                 <img class="photo-preview" src="#" alt="Фото 1">
@@ -63,13 +63,13 @@
             </div>
         </div>
 
-    <label for="location">Город:</label>
-    <input type="text" id="location" name="location" required>
+        <label for="location">Город:</label>
+        <input type="text" id="location" name="location" required>
 
-    <label for="contacts">Контакты:</label>
-    <input type="text" id="contacts" name="contacts" required>
+        <label for="contacts">Контакты:</label>
+        <input type="text" id="contacts" name="contacts" required>
 
-    <input type="submit" value="Опубликовать объявление" class="submit-btn">
+        <input type="submit" value="Опубликовать объявление" class="submit-btn">
     </form>
 </div>
 
