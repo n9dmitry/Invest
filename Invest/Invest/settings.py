@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'reg',
     'item',
     'account',
+    'dashboard',
 ]
 
 MIDDLEWARE = [

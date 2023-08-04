@@ -1,0 +1,24 @@
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-bottom: 150px;*/
+}
+
+.authorization {
+    font-size: 18px;
+    width: fit-content;
+    color: #855E5E;
+    padding: 20px;
+    margin-top: 50px;
+    border: 1px solid black;
+}
+
+#enterbutton {
+    width: fit-content;
+    padding: 5px;
+    background-color: #A38787;
+    border: None;
+    font-size: 25px;
+    color: white;
+}
