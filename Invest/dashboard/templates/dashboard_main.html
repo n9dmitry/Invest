@@ -1,15 +1,16 @@
-{% extends 'dashboard_base.html'%}
+{% extends 'dashboard_navigation.html'%}
+
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
-    <link rel="stylesheet" href=" {% static 'Invest/css/account_settings.css' %} ">
+    <link rel="stylesheet" href=" {% static 'Invest/css/dashboard_navigation.css' %} ">
+
 {% endblock %}
 
 {% block title %}
     FoxInvest - Панель управления модератора
 {% endblock %}
 
-{% block content %}
+{% block inner_content %}
 
 {% endblock %}

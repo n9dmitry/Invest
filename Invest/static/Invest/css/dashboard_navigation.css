@@ -1,0 +1,53 @@
+/* Стили для левой части экрана */
+.main-panel {
+    display: flex;
+    padding-right: 50px;
+}
+
+.menu-title {
+    font-size: 30px;
+}
+
+.nav-block > div > a {
+    color: #3C90B8;
+}
+
+.nav-block > div > a > p:hover{
+    transform: scale(1.02);
+    transition: transform 0.3s
+}
+
+.nav-block {
+    float: left;
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 50px
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+
+.avatar > img {
+    height: 100px;
+    width: 100px;
+}
+
+
+.name {
+    font-weight: bold;
+}
+
+
+.divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
