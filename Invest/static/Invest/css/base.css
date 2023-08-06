@@ -17,7 +17,6 @@ a:visited {
 }
 
 .header {
-    /*height: 185px;*/
     width: auto;
     display: flex;
     flex-direction: column;
@@ -31,11 +30,21 @@ a:visited {
     justify-content: space-between;
 }
 
-.topline a:link {
+.topline a:link,
+.topline a:visited {
     text-decoration: none;
     /* Убирает подчеркивание */
     color: inherit;
     /* Наследует цвет текста от родительского элемента */
+}
+
+a {
+    text-decoration: none;
+}
+
+.topline a:hover,
+.topline a:active {
+    color: inherit;
 }
 
 .lefttopline {

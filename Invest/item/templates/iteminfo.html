@@ -12,13 +12,11 @@
 {% block content %}
 <div class = "details">
     <div class="adinfo">
-        <p> Категория: Категория оффера > Подкатегория оффера > 2я подкатегория оффера </p>
+        <p id="p-category"> Категория: Категория оффера > Подкатегория оффера > 2я подкатегория оффера </p>
+        <h1>Кафе лофт</h1>
         <div><button class="addtofavorite"> ♡ Добавить в избранное </button></div>
         <img src="{% static 'Invest/img/itemimg/1/2.jpg'%}">
-
-
-        <h1>Кафе лофт</h1>
-
+        <h2>Описание</h2>
         <p>
         📣 Инвестируйте вместе с нами и заработайте! 📈<br>
 🏦 Название: "Процветай и Вырастай"<br>
@@ -32,10 +30,30 @@
 💵 Не упустите возможность заработать! Присоединяйтесь к нам сегодня!<br>
 📞 Для получения дополнительной информации и инвестиционного плана, свяжитесь с нами по указанному номеру.<br>
         </p>
+        </br>
+        <a class="claim" href="#">Пожаловаться на объявление</a>
     </div>
     <div class="contacts">
-        <div class="message"><button>Написать сообщение</button></div>
-        <div class="showcontacts"><button>Показать контакты</button></div>
+        <div class="message"><a href="{% url 'messenger' %}" class="button-link-messanger">Написать сообщение</a></div>
+        <div class="show_contacts"><a class="button-link-contacts" onclick="showModal()">Показать контакты</a></div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>+79015069743</p>
+            </div>
+        </div>
+
+        <script>
+            function showModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "block";
+            }
+
+            function closeModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+        </script>
         <div class="userinfo">
             <div class="username">Валера Терентьев</div>
             <div class="avatar"><img src="{% static 'Invest/img/unnamed.jpg' %}"></div>

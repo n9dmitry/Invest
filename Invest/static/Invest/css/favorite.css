@@ -18,3 +18,7 @@
     height: 200px;
     width: 300px;
 }
+
+.item-space > a {
+    font-size: 18px;
+}

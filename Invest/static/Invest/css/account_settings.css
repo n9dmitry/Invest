@@ -4,15 +4,27 @@
     display: inline-block;
 }
 
-.document-confirm {
+.documents {
+    width: 25vw;
+}
+
+.document-confirm, .not_verified {
     display: flex;
-    background-color: #b6e9ee;
-    width: 20%;
+    width: 15vw;
     margin: 10px;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
 }
+
+.document-confirm {
+    background-color: #b6e9ee;
+}
+
+.not_verified {
+    background-color: #e14e76;
+}
+
 
 .document-confirm > p {
     font-size: 12px;
@@ -24,16 +36,49 @@
     margin: 5px;
 }
 
-.not_verified {
-    display: flex;
-    background-color: #e14e76;
-    width: 20%;
-    margin: 10px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-}
 
 .not_verified > p {
     font-size: 12px;
 }
+
+.personal-settings {
+    display: flex;
+}
+
+.account-info-settings {
+    border: 1px solid black;
+    width: 40vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/*Блок с фио*/
+
+.account-info-settings > img {
+    background-color: #3C90B8;
+}
+
+.account-info-settings textarea {
+    width: 30vw;
+    height: 20vh;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.account-info-settings button {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.account-info-settings img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+/*Блок с фио конец*/

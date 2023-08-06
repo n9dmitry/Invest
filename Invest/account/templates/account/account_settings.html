@@ -37,31 +37,38 @@ FoxInvest
                 <img src="{% static 'Invest/img/doc_icons/passport.svg'%}" alt="Паспорт подтвержден">
                 <p>Паспорт подтвержден!</p>
             </div>
-        </div>
-        <div class="document">
-            <button>Загрузить СНИЛС</button>
-            <div class="document-confirm">
-                <img src="{% static 'Invest/img/doc_icons/snils.svg'%}" alt="СНИЛС подтвержден">
-                <p>СНИЛС подтвержден!</p>
+            <div class="document">
+                <button>Загрузить ИНН</button>
+                <div class="document-confirm">
+                    <img src="{% static 'Invest/img/doc_icons/inn.svg'%}" alt="ИНН подтвержден">
+                    <p>ИНН подтвержден!</p>
+                </div>
             </div>
-        </div>
-        <div class="document">
-            <button>Загрузить ИНН</button>
-            <div class="document-confirm">
-                <img src="{% static 'Invest/img/doc_icons/inn.svg'%}" alt="ИНН подтвержден">
-                <p>ИНН подтвержден!</p>
+            <div class="document">
+                <button>Загрузить ОГРН</button>
+                <div class="document-confirm">
+                    <img src="{% static 'Invest/img/doc_icons/ogrn.svg'%}" alt="ОГРН подтвержден">
+                    <p>ОГРН подтвержден!</p>
+                </div>
             </div>
-        </div>
-        <div class="document">
-            <button>Загрузить ОГРН</button>
-            <div class="document-confirm">
-                <img src="{% static 'Invest/img/doc_icons/ogrn.svg'%}" alt="ОГРН подтвержден">
-                <p>ОГРН подтвержден!</p>
-            </div>
-        </div>
 
+        </div>
+        <div class="account-info-settings">
+            <h4>Имя</h4>
+            <input type="text" id="name" value="Иван Иванов" readonly>
+            <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="">
+            <button id="changeAvatar">Изменить Аватарку</button>
+            <h4>Телефон</h4>
+            <input type="text" id="phone" value="+7(ХХХ)-ХХХ-ХХ-ХХ" readonly>
+            <h4>Город</h4>
+            <input type="text" id="city" value="Москва" readonly>
+            <h4>Информация о себе | Деятельности</h4>
+            <textarea id="message" name="message" required="" value="Информация о себе | Деятельности"
+                readonly></textarea>
+            </br>
+            <button id="saveChanges">Сохранить изменения</button>
+        </div>
     </div>
-
 </div>
 
 

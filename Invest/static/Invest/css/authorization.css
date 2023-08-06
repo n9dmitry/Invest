@@ -20,3 +20,7 @@ form {
     font-size: 25px;
     color: white;
 }
+
+.main-container {
+    min-height: 81vh;
+}
