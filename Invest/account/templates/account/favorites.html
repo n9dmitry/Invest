@@ -1,22 +1,24 @@
-{% extends 'base_panel.html'%}
+{% extends 'account/account_template_panel.html'%}
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
-    <link rel="stylesheet" href=" {% static 'Invest/css/favorite.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/favorite.css' %} ">
 {% endblock %}
 
 {% block title %}
-    FoxInvest
+FoxInvest
 {% endblock %}
 
 {% block inner_content %}
 
 <div class="main-section">
-    <div class="title"><h2>Избранное</h2></div>
+    <div class="title">
+        <h2>Избранное</h2>
+    </div>
 
-<div class="item-space">
-        <div class = "item">
+    <div class="item-space">
+        <div class="item">
 
             <a href="{% url 'iteminfo' %}">
                 <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}">
@@ -27,7 +29,7 @@
 
             <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
         </div>
-        <div class = "item">
+        <div class="item">
 
             <a href="{% url 'iteminfo' %}">
                 <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}">
@@ -42,4 +44,3 @@
     </div>
 </div>
 {% endblock %}
-

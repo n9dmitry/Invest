@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
+from .models import Item
 from .forms import ItemForm
+from account.models import Profile
 
 
 def all_items(request):
@@ -26,6 +28,13 @@ def additem(request, errors=''):
     if request.method == 'POST':
         form = ItemForm(request.POST)
         if form.is_valid():
-            form.save()
+            images = request.FILES.getlist('images')
+            item: Item = form.save()
+            for image in images:
+                item.images.create(item_id=item.id, image=image)
+            if not item.contacts:
+                item.contacts = Profile.objects.get(
+                    user=request.user).phone_number
+                item.save()
             return redirect('iteminfo')
-        return redirect('addinfo', errors=form.errors)
+        return render(request, 'additem.html', context={'request': request, 'errors': form.errors})

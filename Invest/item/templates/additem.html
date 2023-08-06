@@ -10,13 +10,15 @@
 {% endblock %}
 
 {% block content %}
-<div class="additem ">
+<div class="additem">
     <h1>Добавление объявления</h1>
-    <form action="/submit_ad" method="post">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{errors}}
         <label for="category">Категория:</label>
         <select id="category" name="category">
             <option value="1">Автобизнес</option>
-            <option value="информация_связь">Информация и связь</option>
+            <!-- <option value="информация_связь">Информация и связь</option>
             <option value="it">IT , web, интернет</option>
             <option value="добыча_ископаемых">Добыча полезных ископаемых</option>
             <option value="финансы_страхование">Финансы и страхование</option>
@@ -36,7 +38,7 @@
             <option value="торговля">Торговля</option>
             <option value="транспортировка">Транспортировка</option>
             <option value="услуги">Услуги</option>
-            <option value="индустрия_красоты">Красота</option>
+            <option value="индустрия_красоты">Красота</option> -->
 
             <!-- Добавьте остальные категории по алфавиту -->
         </select>
@@ -47,8 +49,9 @@
         <label for="description">Описание:</label>
         <textarea id="description" name="description" rows="4" required></textarea>
 
-        <label class="photo-label">Фото:</label>
-        <div class="photo-grid">
+        <label for="images" class="photo-label">Выберите несколько/одно фото:</label>
+        <input type="file" multiple name="images" id="">
+        <!-- <div class="photo-grid">
             <div class="photo-cell">
                 <img class="photo-preview" src="#" alt="Фото 1">
             </div>
@@ -61,14 +64,15 @@
             <div class="photo-cell">
                 <img class="photo-preview" src="#" alt="Фото 4">
             </div>
-        </div>
-
-        <label for="location">Город:</label>
-        <input type="text" id="location" name="location" required>
+        </div> -->
+        <label for="required_investment">Требуемая инвестиция:</label>
+        <input type="text" id="required_investment" name="required_investment">
+        <label for="city">Город:</label>
+        <input type="text" id="city" name="city" required>
 
         <label for="contacts">Контакты:</label>
-        <input type="text" id="contacts" name="contacts" required>
-
+        <input type="text" id="contacts" name="contacts">
+        <input type="text" hidden name="user" value="{{request.user.id}}">
         <input type="submit" value="Опубликовать объявление" class="submit-btn">
     </form>
 </div>

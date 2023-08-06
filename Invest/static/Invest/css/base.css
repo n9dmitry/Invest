@@ -5,9 +5,15 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-a:hover, li:hover, .login-links > a > p:hover {
+a:hover,
+li:hover,
+.login-links>a>p:hover {
     transform: scale(1.03);
     transition: transform 0.3s
+}
+
+a:visited {
+    color: white;
 }
 
 .header {
@@ -62,7 +68,7 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 
 
-.righttopline > div {
+.righttopline>div {
     padding-right: 30px;
     display: flex;
     justify-content: flex-end;
@@ -73,12 +79,14 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 }
 
-.righttopline > div > img {
+.righttopline>div>img {
     width: 35px;
     height: 35px;
 }
 
-.favorite_icon > a > img, .chat_icon > a > img, .notifications_icon > a > img {
+.favorite_icon>a>img,
+.chat_icon>a>img,
+.notifications_icon>a>img {
     width: 25px;
 }
 
@@ -93,7 +101,7 @@ a:hover, li:hover, .login-links > a > p:hover {
     display: flex;
 }
 
-.login-links > a > p {
+.login-links>a>p {
     margin: 0 3px;
 }
 
@@ -107,7 +115,7 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 }
 
-.searchline > img {
+.searchline>img {
     width: 60px;
     height: 60px;
 
@@ -130,12 +138,13 @@ a:hover, li:hover, .login-links > a > p:hover {
     height: 50px;
 }
 
-.container_searchline > span {
+.container_searchline>span {
     color: white;
     font-size: 30px;
     font-family: 'Inter', sans-serif;
     margin: 0 10px;
 }
+
 .categories {
     align-items: center;
     background-color: #D9D9D9;
@@ -157,7 +166,7 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 }
 
-.search > input {
+.search>input {
     width: 700px;
     height: 35px;
     border-radius: 5px;
@@ -167,7 +176,7 @@ a:hover, li:hover, .login-links > a > p:hover {
     padding-left: 10px;
 }
 
-.search > input::placeholder {
+.search>input::placeholder {
     font-size: 15px;
 }
 
@@ -177,7 +186,7 @@ a:hover, li:hover, .login-links > a > p:hover {
     border-radius: 5px;
 }
 
-.findbutton > img {
+.findbutton>img {
     height: 32px;
     width: 32px;
     align-self: center;

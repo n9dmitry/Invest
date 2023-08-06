@@ -1,13 +1,12 @@
 from django.urls import path
+# pylint: disable=all
 from . import views
+# pylint: enable=all
+
 
 urlpatterns = [
-    path('chat', views.chat, name='chat'),
-    path('messenger', views.messenger, name='messenger'),
-    path('my_item', views.my_item, name='my_item'),
-    path('favorite', views.favorite, name='favorite'),
-    path('base_panel', views.base_panel, name='base_panel'),
-    path('notifications', views.notifications, name='notifications'),
-    path('pay_services', views.pay_services, name='pay_services'),
+    path('my_items', views.my_items, name='my_item'),
+    path('favorites', views.favorites, name='favorite'),
+    path('account_panel', views.account_panel, name='account_panel'),
     path('account_settings', views.account_settings, name='account_settings'),
 ]

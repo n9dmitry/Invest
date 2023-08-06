@@ -1,0 +1,107 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/my_item.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest - Мои объявления
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="main-section">
+    <div class="title">
+        <h2>Мои объявления</h2>
+    </div>
+    <a href="{% url 'additem' %}">
+        <button class="green-button">Добавить объявление</button>
+    </a>
+
+
+    <!-- Добавьте другие сообщения здесь -->
+
+    <div class="ad-block">
+        <div class="item_options">
+            <span class="span_photo">Фото</span>
+            <span class="span_title">Название</span>
+            <span class="span_views">Статистика объявления</span>
+            <span class="span_addtofavorite">Статус</span>
+            <span class="span_contactviews">Действие</span>
+        </div>
+    </div>
+
+    <div class="item-block">
+        <div class="item-details">
+            <div class="item-image">
+                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото">
+            </div>
+            <span>Тестовое объявление 1</span>
+            <div>
+                <span>Просмотров: 100</span></br>
+                <span>Избранное: 10</span></br>
+                <span>Контакты: 5</span>
+            </div>
+            <span>Опубликовано</span>
+            <div class="actions">
+                <button>Редактировать</button>
+                <button>Деактивировать</button>
+                <button>Поднять</button>
+                <button>Удалить</button>
+            </div>
+        </div>
+        <div class="item-details">
+            <div class="item-image">
+                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото">
+            </div>
+            <span>Тестовое объявление 1</span>
+            <div>
+                <span>Просмотров: 100</span></br>
+                <span>Избранное: 10</span></br>
+                <span>Контакты: 5</span>
+            </div>
+            <span>Опубликовано</span>
+            <div class="actions">
+                <button>Редактировать</button>
+                <button>Деактивировать</button>
+                <button>Поднять</button>
+                <button>Удалить</button>
+            </div>
+        </div>
+        <div class="item-details">
+            <div class="item-image">
+                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото">
+            </div>
+            <span>Тестовое объявление 1</span>
+            <div>
+                <span>Просмотров: 100</span></br>
+                <span>Избранное: 10</span></br>
+                <span>Контакты: 5</span>
+            </div>
+            <span>Опубликовано</span>
+            <div class="actions">
+                <button>Редактировать</button>
+                <button>Деактивировать</button>
+                <button>Поднять</button>
+                <button>Удалить</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!--    Див нужный -->
+
+
+    <!-- Здесь можно добавить объявления в виде блоков или других элементов -->
+</div>
+
+
+
+{% endblock %}

@@ -1,9 +1,12 @@
 """
     Модели для Item
 """
-
+from functools import partial
+from typing import Any, Iterable, Optional
 from django.contrib.auth.models import User
 from django.db import models
+
+from account.models import Profile
 
 
 class Category(models.Model):
@@ -25,10 +28,13 @@ class Item(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     city = models.CharField(max_length=255, blank=True, null=True)
-    required_investment = models.IntegerField()
+    required_investment = models.IntegerField(blank=True, null=True)
     profit_per_month = models.CharField(max_length=255, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
+    images = models.ManyToManyField(
+        'ItemImage', related_name='images_for_item')
+    contacts = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return str(self.title)
@@ -47,12 +53,13 @@ class ItemStatistics(models.Model):
 
 
 def save_image(instance, filename):
-    return '/'.join([str(instance.id), filename])
+    return '/'.join(['itemimg', str(instance.item_id), filename])
 
 
 class ItemImage(models.Model):
     """
         Модель для картинок объявлений
     """
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to=save_image, blank=True, null=True)
+    item_id = models.IntegerField(blank=True, null=True)
+    image = models.ImageField(
+        upload_to=save_image, blank=True, null=True)

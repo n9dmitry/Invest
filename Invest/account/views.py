@@ -1,23 +1,33 @@
+"""
+    Представления для приложения Account
+"""
+
 from django.shortcuts import render
 
-def chat(request):
-    return render(request, 'chat.html')
-def messenger(request):
-    return render(request, 'messenger.html')
-def my_item(request):
-    return render(request, 'my_item.html')
 
-def favorite(request):
-    return render(request, 'favorite.html')
+def my_items(request):
+    """
+        Представление показывает все Items на странице
+    """
+    return render(request, 'account/my_items.html')
 
-def base_panel(request):
-    return render(request, 'base_panel.html')
 
-def notifications(request):
-    return render(request, 'notifications.html')
+def favorites(request):
+    """
+        Представление показывает избранные Item
+    """
+    return render(request, 'account/favorites.html')
 
-def pay_services(request):
-    return render(request, 'pay_services.html')
+
+def account_panel(request):
+    """
+        Панель действий связанных с аккаунтом
+    """
+    return render(request, 'account/account_tempalte_panel.html')
+
 
 def account_settings(request):
-    return render(request, 'account_settings.html')
+    """
+        Показывает настройки аккаунта
+    """
+    return render(request, 'account/account_settings.html')
