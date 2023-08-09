@@ -18,29 +18,19 @@ FoxInvest
     </div>
 
     <div class="item-space">
+        {% for item in favorites_items %}
         <div class="item">
 
-            <a href="{% url 'iteminfo' %}">
-                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}">
+            <a href="{% url 'iteminfo' item_id=item.id %}">
+                <img src="{{ item.images.first.image.url }}">
             </a>
 
 
-            <a href="{% url 'iteminfo' %}"> Кафе лофт </a>
+            <a href="{% url 'iteminfo' item_id=item.id %}"> {{ item.title }} </a>
 
             <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
         </div>
-        <div class="item">
-
-            <a href="{% url 'iteminfo' %}">
-                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}">
-            </a>
-
-
-            <a href="{% url 'iteminfo' %}"> Кафе лофт </a>
-
-            <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
-        </div>
-
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

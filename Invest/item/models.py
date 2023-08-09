@@ -1,12 +1,8 @@
 """
     Модели для Item
 """
-from functools import partial
-from typing import Any, Iterable, Optional
 from django.contrib.auth.models import User
 from django.db import models
-
-from account.models import Profile
 
 
 class Category(models.Model):
@@ -35,21 +31,17 @@ class Item(models.Model):
     images = models.ManyToManyField(
         'ItemImage', related_name='images_for_item')
     contacts = models.CharField(max_length=500, blank=True, null=True)
+    count_view = models.IntegerField(default=0)
+    count_get_contacts = models.IntegerField(default=0)
+    count_add_favorite = models.ManyToManyField(
+        User, related_name='favorite_items')
+    status = models.CharField(max_length=100, default='Проверяется')
 
     def __str__(self):
         return str(self.title)
 
-
-class ItemStatistics(models.Model):
-    """
-        Модель для статистики объявления
-    """
-    item_id = models.OneToOneField(Item, on_delete=models.CASCADE)
-    count_view = models.IntegerField()
-    count_phone_number = models.IntegerField()
-
-    def __str__(self):
-        return str(f"ItemStatistics {self.id}")
+    def get_count_add_favorite(self):
+        return len(self.count_add_favorite.all())
 
 
 def save_image(instance, filename):

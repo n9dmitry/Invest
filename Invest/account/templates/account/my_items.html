@@ -34,17 +34,20 @@ FoxInvest - Мои объявления
     </div>
 
     <div class="item-block">
+        {% for item in user_items %}
         <div class="item-details">
             <div class="item-image">
-                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото">
+                <a href="{% url 'iteminfo' item_id=item.id %}">
+                    <img src="{{ item.images.first.image.url }}" alt="Фото">
+                </a>
             </div>
-            <span>Тестовое объявление 1</span>
+            <span>{{ item.title }}</span>
             <div>
-                <span>Просмотров: 100</span></br>
-                <span>Избранное: 10</span></br>
-                <span>Контакты: 5</span>
+                <span>Просмотров: {{ item.count_view }}</span></br>
+                <span>Избранное: {{ item.count_add_favorite.count }}</span></br>
+                <span>Контакты: {{ item.count_get_contacts }}</span>
             </div>
-            <span>Опубликовано</span>
+            <span>{{ item.status }}</span>
             <div class="actions">
                 <button>Редактировать</button>
                 <button>Деактивировать</button>
@@ -52,43 +55,7 @@ FoxInvest - Мои объявления
                 <button>Удалить</button>
             </div>
         </div>
-        <div class="item-details">
-            <div class="item-image">
-                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото">
-            </div>
-            <span>Тестовое объявление 1</span>
-            <div>
-                <span>Просмотров: 100</span></br>
-                <span>Избранное: 10</span></br>
-                <span>Контакты: 5</span>
-            </div>
-            <span>Опубликовано</span>
-            <div class="actions">
-                <button>Редактировать</button>
-                <button>Деактивировать</button>
-                <button>Поднять</button>
-                <button>Удалить</button>
-            </div>
-        </div>
-        <div class="item-details">
-            <div class="item-image">
-                <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото">
-            </div>
-            <span>Тестовое объявление 1</span>
-            <div>
-                <span>Просмотров: 100</span></br>
-                <span>Избранное: 10</span></br>
-                <span>Контакты: 5</span>
-            </div>
-            <span>Опубликовано</span>
-            <div class="actions">
-                <button>Редактировать</button>
-                <button>Деактивировать</button>
-                <button>Поднять</button>
-                <button>Удалить</button>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 
 
