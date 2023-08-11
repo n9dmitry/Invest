@@ -22,6 +22,10 @@ class Profile(models.Model):
     phone_verified = models.BooleanField(default=False)
     is_online = models.BooleanField(default=False)
     favorites = models.ManyToManyField(Item)
+    snils = models.ImageField(upload_to=save_image, blank=True, null=True)
+    passport = models.ImageField(upload_to=save_image, blank=True, null=True)
+    ogrn = models.ImageField(upload_to=save_image, blank=True, null=True)
+    inn = models.ImageField(upload_to=save_image, blank=True, null=True)
     
     def __str__(self):
         # pylint: disable=all

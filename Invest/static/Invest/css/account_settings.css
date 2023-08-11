@@ -5,10 +5,17 @@
 }
 
 .documents {
-    width: 25vw;
+    display: flex;
+    flex-direction: row;
+
 }
 
-.document-confirm, .not_verified {
+.document {
+    margin-right: 50px;
+}
+
+.document-confirm,
+.not_verified {
     display: flex;
     width: 15vw;
     margin: 10px;
@@ -26,18 +33,18 @@
 }
 
 
-.document-confirm > p {
+.document-confirm>p {
     font-size: 12px;
 }
 
-.document-confirm > img {
+.document-confirm>img {
     width: 20px;
     height: 20px;
     margin: 5px;
 }
 
 
-.not_verified > p {
+.not_verified>p {
     font-size: 12px;
 }
 
@@ -47,7 +54,7 @@
 
 .account-info-settings {
     border: 1px solid black;
-    width: 40vw;
+    width: 30vw;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -59,7 +66,7 @@
 
 /*Блок с фио*/
 
-.account-info-settings > img {
+.account-info-settings>img {
     background-color: #3C90B8;
 }
 
@@ -81,4 +88,5 @@
     border-radius: 50%;
     margin-bottom: 10px;
 }
+
 /*Блок с фио конец*/

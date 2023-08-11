@@ -21,7 +21,6 @@ from .forms import SignupForm
 def authorization(request):
     return render(request, 'account/authorization.html')
 
-
 def my_items(request):
     """
         Представление показывает все Items на странице
@@ -32,7 +31,6 @@ def my_items(request):
     }
     return render(request, 'account/my_items.html', context)
 
-
 def favorites(request):
     """
         Представление показывает избранные Item пользователя
@@ -42,7 +40,6 @@ def favorites(request):
         'favorites_items': profile.favorites.all()
     }
     return render(request, 'account/favorites.html', context)
-
 
 def add_to_favorite(request):
     """
@@ -60,13 +57,11 @@ def add_to_favorite(request):
     else:
         return JsonResponse({'status': 'error'})
 
-
 def account_panel(request):
     """
         Панель действий связанных с аккаунтом
     """
     return render(request, 'account/account_tempalte_panel.html')
-
 
 def account_settings(request):
     """
@@ -132,4 +127,3 @@ def activate(request, uidb64, token):
         return render(request, 'account/verify.html', {'message':'Спасибо за регистрацию, ваш аккаунт активен!'})
     else:
         return render(request, 'account/verify.html', {'message':'Извините, но ссылка более не действительна!'})
- 

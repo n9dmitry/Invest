@@ -26,16 +26,24 @@ FoxInvest
     </br></br>
     <button>Сменить пароль</button>
     </br>
+    <h4>Документы</h4>
+
     <div class="documents">
-        <h4>Документы</h4>
-        <div class="not_verified">
+        <!-- <div class="not_verified">
             <p>Паспорт не подтвержден</p>
-        </div>
+        </div> -->
         <div class="document">
             <button>Загрузить Паспорт</button>
             <div class="document-confirm">
                 <img src="{% static 'Invest/img/doc_icons/passport.svg'%}" alt="Паспорт подтвержден">
                 <p>Паспорт подтвержден!</p>
+            </div>
+            <div class="document">
+                <button>Загрузить СНИЛС</button>
+                <div class="document-confirm">
+                    <img src="{% static 'Invest/img/doc_icons/snils.svg'%}" alt="ОГРН подтвержден">
+                    <p>СНИЛС подтвержден!</p>
+                </div>
             </div>
             <div class="document">
                 <button>Загрузить ИНН</button>
@@ -51,7 +59,6 @@ FoxInvest
                     <p>ОГРН подтвержден!</p>
                 </div>
             </div>
-
         </div>
         <div class="account-info-settings">
             <h4>Имя</h4>
