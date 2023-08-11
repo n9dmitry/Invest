@@ -67,8 +67,36 @@ def additem(request, errors=''):
                 item.contacts = Profile.objects.get(
                     user=request.user).phone_number
                 item.save()
-            return redirect('iteminfo')
+            return redirect('iteminfo', item_id=item.id)
         return render(request, 'item/additem.html', context={'request': request, 'errors': form.errors})
+
+
+@login_required
+def edit_item(request, item_id):
+    """
+        Вьюшка для редактирования своих объявлений
+    """
+    item = get_object_or_404(Item, pk=item_id)
+    if request.method == 'GET':
+        form = ItemForm(instance=item)
+        return render(request=request, template_name='item/edit_item.html', context={'form': form})
+
+    form = ItemForm(data=request.POST, instance=item)
+
+    if form.is_valid():
+        if form.cleaned_data['user'].id == request.user.id:
+            form.save()
+            return redirect('iteminfo', item_id=item.id)
+    return render(request=request, template_name='item/edit_item.html', context={'form': form, 'errors': form.errors})
+
+
+@login_required
+def delete_item(request, item_id):
+    """
+        Вьюшка для удаления объявления
+    """
+    Item.objects.get(id=item_id).delete()
+    return redirect('my_items')
 
 
 def about(request):

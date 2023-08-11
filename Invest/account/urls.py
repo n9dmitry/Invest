@@ -6,7 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('my_items', views.my_items, name='my_item'),
+    path('my_items', views.my_items, name='my_items'),
     path('favorites/', views.favorites, name='favorite'),
     path('account_panel', views.account_panel, name='account_panel'),
     path('account_settings', views.account_settings, name='account_settings'),

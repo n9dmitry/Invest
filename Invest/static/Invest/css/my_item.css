@@ -82,13 +82,21 @@
 }
 
 .actions {
-  display: block;
+  display: flex;
+  flex-direction: column;
+
   margin: 3px 0;
 }
 
-.actions button {
-  width: 110px;
-  margin: 2px;
+.actions>a {
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: black;
+  border: 1px solid black;
+  padding: 1px;
+  border-radius: 5px;
+
 }
 
 /*.ad-details > span, .ad-details > div {*/

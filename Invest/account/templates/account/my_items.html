@@ -49,10 +49,10 @@ FoxInvest - Мои объявления
             </div>
             <span>{{ item.status }}</span>
             <div class="actions">
-                <button>Редактировать</button>
-                <button>Деактивировать</button>
-                <button>Поднять</button>
-                <button>Удалить</button>
+                <a href="{% url 'edit_item' item_id=item.id %}">Редактировать</a>
+                <a href="">Деактивировать</a>
+                <a href="">Поднять</a>
+                <a href="{% url 'delete_item' item_id=item.id%}">Удалить</a>
             </div>
         </div>
         {% endfor %}
