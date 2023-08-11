@@ -7,8 +7,29 @@ form {
 
 }
 
-form > div > input {
+.reg {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+p {
+    margin: 10px;
+}
+
+h1 {
+    align-self: center;
+}
+
+form>div>input {
     margin-top: 15px;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .enter {
@@ -16,7 +37,9 @@ form > div > input {
     padding: 50px;
     color: #855E5E;
     font-size: 18px;
-
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
 
@@ -24,9 +47,10 @@ form > div > input {
     width: fit-content;
     padding: 5px;
     background-color: #A38787;
+    border-radius: 10px;
 }
 
-.enter-button > a {
+.enter-button>a {
     font-size: 25px;
     color: white;
     text-decoration: None;
@@ -42,7 +66,7 @@ form > div > input {
     color: white;
 }
 
-.reg > a {
+.reg>a {
     color: #855E5E;
 
 }

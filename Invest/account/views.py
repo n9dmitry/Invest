@@ -5,6 +5,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from item.models import Item
+from .models import Profile
 from django.http import JsonResponse
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string 
@@ -26,7 +27,6 @@ def my_items(request):
         Представление показывает все Items на странице
     """
     user_items = Item.objects.filter(user=request.user)
-    print(user_items[0].get_count_add_favorite())
     context = {
         'user_items': user_items
     }
@@ -84,6 +84,15 @@ def signup(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
+            user.username = '_'.join([request.POST['name'], str(user.pk)])
+            user.save()
+
+            Profile(    
+                user=user,
+                phone_number=request.POST['phone_number'],
+                avatar = request.FILES['avatar'],
+                interest=request.POST['interest']
+                ).save()
 
             current_site = get_current_site(request)
             mail_subject = 'Ссылка для активации отправлена ​​на ваш адрес электронной почты'
@@ -102,7 +111,10 @@ def signup(request):
                 to=[to_email]
             )
             email.send()
-            return render(request, 'account/verify.html', {'message':'Вам на почту была отправленна ссылка для активации аккаунта!'})
+            return render(request, 'account/verify.html', {'message':'Вам на почту была отправленна ссылка для активации аккаунта! Письмо может быть в спаме.'})
+        else:
+            return render(request, 'account/registration.html', {'form':form, 'errors':form.errors})
+
     if request.method == 'GET':
         form = SignupForm()
     return render(request, 'account/registration.html', {'form':form})
@@ -116,6 +128,7 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
+        Profile.objects.get(user=user).save()
         return render(request, 'account/verify.html', {'message':'Спасибо за регистрацию, ваш аккаунт активен!'})
     else:
         return render(request, 'account/verify.html', {'message':'Извините, но ссылка более не действительна!'})

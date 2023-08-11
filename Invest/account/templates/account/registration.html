@@ -2,20 +2,28 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/registration.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/registration.css' %} ">
 {% endblock %}
 
 {% block title %}
-    FoxInvest - Регистрация
+FoxInvest - Регистрация
 {% endblock %}
 
 {% block content %}
 <div class="general">
-    <form method="post">
+    {{errors}}
+    <form method="post" enctype="multipart/form-data">
         <div class="reg">
             <h1>Регистрация</h1>
             {% csrf_token %}
-            {{ form.as_p }}
+            <p>Имя: {{ form.name }}</p>
+            <p>Почта: {{ form.email}}</p>
+            <p>Номер телефона: {{ form.phone_number }}</p>
+            <p>Ваше фото: {{ form.avatar }}</p>
+            <p>Меня больше интересует:</p>
+            <p>{{ form.interest }}</p>
+            <p>Пароль: {{ form.password1 }}</p>
+            <p>Повторите пароль: {{ form.password2 }}</p>
             <input id='regbutton' type="submit" value="Зарегистрироваться"><br>
             <a href="#">Забыли пароль?</a>
             <p>

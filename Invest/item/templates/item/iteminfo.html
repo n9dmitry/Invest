@@ -80,7 +80,11 @@ FoxInvest - Оффер #
         </script>
         <div class="userinfo">
             <div class="username">{{ item.user.email }}</div>
+            {% if creater_profile.avatar %}
             <div class="avatar"><img src="{{ creater_profile.avatar.url }}"></div>
+            {% else %}
+            <div class="avatar"><img src="{% static 'Invest/img/unnamed.jpg' %}" alt=""></div>
+            {% endif %}
         </div>
         <div class="othera"><button>Другие объявления пользователя</button></div>
     </div>

@@ -35,7 +35,10 @@ class SignupForm(UserCreationForm):
     """
         Форма для регистрацию через почту
     """
-    email = forms.EmailField(max_length=200, help_text='Ваша почта')
+    name = forms.CharField(max_length=150, required=True)
+    email = forms.EmailField(max_length=200, help_text='Ваша почта', required=True)
+    phone_number = forms.CharField(max_length=100, required=True)
+    avatar = forms.ImageField(required=False)
     interest = forms.ChoiceField(
         label='Меня больше интересует',
         widget=forms.RadioSelect,
@@ -48,4 +51,5 @@ class SignupForm(UserCreationForm):
             Конфигурация формы
         """
         model = User
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = ('email', 'password1', 'password2')
+
