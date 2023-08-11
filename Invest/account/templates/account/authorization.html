@@ -2,24 +2,27 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href=" {% static 'Invest/css/authorization.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/authorization.css' %} ">
 {% endblock %}
 
 {% block title %}
-    FoxInvest - Вход
+FoxInvest - Вход
 {% endblock %}
 
 {% block content %}
-    <form method="post">
-        <div class="authorization">
-            <h1>Вход</h1>
-            {% csrf_token %}
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            <input id='enterbutton' type="submit" value="Войти">
-        </div>
-    </form>
+<form method="post">
+    <div class="authorization">
+        <h1>Вход</h1>
+        {% csrf_token %}
+        {{errors}}
+        {{ form.as_p }}
+        <!-- 
+        <label for="{{form.username.id_for_label}}">Email:</label>
+        {{form.username}}<br><br>
+        <label for="{{form.password.id_for_label}}">Пароль:</label>
+        {{form.password}}<br><br> -->
+        <input id='enterbutton' type="submit" value="Войти">
+    </div>
+</form>
 
 {% endblock %}

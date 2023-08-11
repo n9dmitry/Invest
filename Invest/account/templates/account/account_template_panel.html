@@ -37,6 +37,9 @@ FoxInvest - Мои объявления
         <div class="menu-item"><a href="{% url 'account_settings' %}">
                 <p>Настройки аккаунта</p>
             </a></div>
+        <div class="menu-item"><a href="{% url 'logout' %}">
+                <p>Выйти</p>
+            </a></div>
     </div>
     {% block inner_content %}{% endblock %}
 </div>

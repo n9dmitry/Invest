@@ -2,35 +2,23 @@
     Представления для приложения Account
 """
 
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from item.models import Item
 from django.http import JsonResponse
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string 
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode 
+from django.utils.encoding import force_bytes, force_str 
+from .token import account_activation_token
+from django.core.mail import EmailMessage 
 from .forms import ItemForm
 from account.models import Profile
 from .forms import RegistrationForm
-
-
-def registration(request):
-
-    if request.method == 'GET':
-        form = RegistrationForm()
-
-        return render(request, 'registration.html', {'form': form})
-
-    if request.method == 'POST':
-        print(request.POST)
-        form = RegistrationForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-            return redirect('item')
-        else:
-            form = RegistrationForm()
-            return render(request, 'registration.html', {'error': form.error_messages, 'form': form})
-
+from .forms import SignupForm
 
 def authorization(request):
-    return render(request, 'authorization.html')
+    return render(request, 'account/authorization.html')
 
 
 def my_items(request):
@@ -85,3 +73,50 @@ def account_settings(request):
         Показывает настройки аккаунта
     """
     return render(request, 'account/account_settings.html')
+
+def signup(request):
+    """
+        Вьюшка для регистрации через почту
+    """
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
+
+            current_site = get_current_site(request)
+            mail_subject = 'Ссылка для активации отправлена ​​на ваш адрес электронной почты'
+            message = render_to_string('account/acc_activate_email.html',
+                {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+                }
+            )
+            to_email = form.cleaned_data.get('email')
+            email = EmailMessage(
+                mail_subject,
+                message,
+                to=[to_email]
+            )
+            email.send()
+            return render(request, 'account/verify.html', {'message':'Вам на почту была отправленна ссылка для активации аккаунта!'})
+    if request.method == 'GET':
+        form = SignupForm()
+    return render(request, 'account/registration.html', {'form':form})
+
+def activate(request, uidb64, token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        return render(request, 'account/verify.html', {'message':'Спасибо за регистрацию, ваш аккаунт активен!'})
+    else:
+        return render(request, 'account/verify.html', {'message':'Извините, но ссылка более не действительна!'})
+ 

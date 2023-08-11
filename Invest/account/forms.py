@@ -23,11 +23,29 @@ class RegistrationForm(UserCreationForm):
         model = User
         fields = ('email', 'name', 'interest', 'password1', 'password2')
 
-        from .models import Item
-
 
 class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ['title', 'description', 'city',
                   'required_investment', 'profit_per_month', 'user', 'category']
+
+
+class SignupForm(UserCreationForm):
+    """
+        Форма для регистрацию через почту
+    """
+    email = forms.EmailField(max_length=200, help_text='Ваша почта')
+    interest = forms.ChoiceField(
+        label='Меня больше интересует',
+        widget=forms.RadioSelect,
+        choices=[('И', 'Инвестиции'),
+                 ('П', 'Привлечение денег в свои проекты')]
+    )
+
+    class Meta:
+        """
+            Конфигурация формы
+        """
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')

@@ -4,13 +4,19 @@ from . import views
 # pylint: enable=all
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import activate
+from django.contrib.auth.views import LoginView, LogoutView
+
 
 urlpatterns = [
     path('my_items', views.my_items, name='my_items'),
     path('favorites/', views.favorites, name='favorite'),
     path('account_panel', views.account_panel, name='account_panel'),
     path('account_settings', views.account_settings, name='account_settings'),
-    path('registration', views.registration, name='registration'),
-    path('authorization', views.authorization, name='authorization'),
-    path('add_favorite/', views.add_to_favorite, name='add_favorite')
+    path('registration', views.signup, name='registration'),
+    path('add_favorite/', views.add_to_favorite, name='add_favorite'),
+    path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',activate, name='activate'), 
+    path('authorization', LoginView.as_view(template_name='account/authorization.html'), name='authorization'),
+    path('logout/', LogoutView.as_view(template_name='account/logout.html'), name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
