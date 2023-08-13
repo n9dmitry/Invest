@@ -1,7 +1,9 @@
-.green-border {
-    border: 2px solid green;
-    padding: 10px;
-    display: inline-block;
+.account-info-settings>h4,.account-info-settings>input {
+    margin: 5px;
+}
+
+.main-block {
+    display: flex;
 }
 
 .documents {
@@ -54,14 +56,15 @@
 
 .account-info-settings {
     border: 1px solid black;
-    width: 30vw;
+    width: 80%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 2em;
+    margin: 2em;
+    background-color: #f5f8f8;
 }
 
 /*Блок с фио*/
@@ -90,3 +93,21 @@
 }
 
 /*Блок с фио конец*/
+
+/*Адаптив*/
+@media (max-width: 780px) {
+
+    .document-confirm, .not_verified {
+        width: 25vw;
+    }
+
+    .main-block {
+    display: block;
+}
+
+    h4 {
+        font-size: 10px;
+    }
+}
+
+

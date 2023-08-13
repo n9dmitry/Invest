@@ -19,12 +19,18 @@
     <div class="header">
         <div class="topline">
             <div class="lefttopline">
-                <ul>
-                    <li><a href="{% url 'all_items' %}">Главная</a></li>
-                    <li><a href="{% url 'about' %}">О нас</a></li>
-                    <li><a href="{% url 'support' %}">Поддержка</a></li>
+                <nav class="menu">
+                    <ul class="menu-list">
+                        <button class="burger-button">
+                            <span></span><span></span><span></span>
+        <!--                    <img id="burger" src="{% static 'Invest/img/searchline/burger_menu.svg' %}">-->
+                        </button>
+                        <li><a href="{% url 'all_items' %}">Главная</a></li>
+                        <li><a href="{% url 'about' %}">О нас</a></li>
+                        <li><a href="{% url 'support' %}">Поддержка</a></li>
 
-                </ul>
+                    </ul>
+                </nav>
             </div>
             <div class="righttopline">
                 <div class="favorite_icon">
@@ -67,10 +73,10 @@
         </div>
         <div class="searchline">
             <div class="container_searchline">
-                <img id="burger" src="{% static 'Invest/img/searchline/burger_menu.svg' %}">
-                <img id="logo" src="{% static 'Invest/img/searchline/logo.svg' %}">
-                <span>FoxInvest</span>
+
                 <button class="categories">Категории</button>
+                <img id="logo" src="{% static 'Invest/img/searchline/logo.svg' %}">
+                <span>StarFox</span>
             </div>
             <div class="search">
                 <input type="text" placeholder="Поиск по сайту">

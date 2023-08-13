@@ -17,50 +17,17 @@ FoxInvest
         <h2>Настройки аккаунта</h2>
     </div>
 
-    <h3>Загрузка документов подтвердит вашу лояльность как для соискателей, так и для инвесторов</br>
+    <h4>Загрузка документов подтвердит вашу лояльность как для соискателей, так и для инвесторов</br>
         После подтверждения документов будут видны в вашем профиле
-    </h3>
+    </h4>
     <!--        <button>Подтвердить номер телефона</button>-->
     <!--        </br>-->
     <button>Сменить email</button>
-    </br></br>
     <button>Сменить пароль</button>
-    </br>
-    <h4>Документы</h4>
 
-    <div class="documents">
-        <!-- <div class="not_verified">
-            <p>Паспорт не подтвержден</p>
-        </div> -->
-        <div class="document">
-            <button>Загрузить Паспорт</button>
-            <div class="document-confirm">
-                <img src="{% static 'Invest/img/doc_icons/passport.svg'%}" alt="Паспорт подтвержден">
-                <p>Паспорт подтвержден!</p>
-            </div>
-            <div class="document">
-                <button>Загрузить СНИЛС</button>
-                <div class="document-confirm">
-                    <img src="{% static 'Invest/img/doc_icons/snils.svg'%}" alt="ОГРН подтвержден">
-                    <p>СНИЛС подтвержден!</p>
-                </div>
-            </div>
-            <div class="document">
-                <button>Загрузить ИНН</button>
-                <div class="document-confirm">
-                    <img src="{% static 'Invest/img/doc_icons/inn.svg'%}" alt="ИНН подтвержден">
-                    <p>ИНН подтвержден!</p>
-                </div>
-            </div>
-            <div class="document">
-                <button>Загрузить ОГРН</button>
-                <div class="document-confirm">
-                    <img src="{% static 'Invest/img/doc_icons/ogrn.svg'%}" alt="ОГРН подтвержден">
-                    <p>ОГРН подтвержден!</p>
-                </div>
-            </div>
-        </div>
+    <div class="main-block">
         <div class="account-info-settings">
+            <h3>Персональные данные</h3>
             <h4>Имя</h4>
             <input type="text" id="name" value="Иван Иванов" readonly>
             <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="">
@@ -75,7 +42,43 @@ FoxInvest
             </br>
             <button id="saveChanges">Сохранить изменения</button>
         </div>
+        <div class="documents">
+
+            <!-- <div class="not_verified">
+                <p>Паспорт не подтвержден</p>
+            </div> -->
+            <div class="document">
+                <h3>Документы</h3>
+                <button>Загрузить Паспорт</button>
+                <div class="document-confirm">
+                    <img src="{% static 'Invest/img/doc_icons/passport.svg'%}" alt="Паспорт подтвержден">
+                    <p>Паспорт подтвержден!</p>
+                </div>
+                <div class="document">
+                    <button>Загрузить СНИЛС</button>
+                    <div class="document-confirm">
+                        <img src="{% static 'Invest/img/doc_icons/snils.svg'%}" alt="ОГРН подтвержден">
+                        <p>СНИЛС подтвержден!</p>
+                    </div>
+                </div>
+                <div class="document">
+                    <button>Загрузить ИНН</button>
+                    <div class="document-confirm">
+                        <img src="{% static 'Invest/img/doc_icons/inn.svg'%}" alt="ИНН подтвержден">
+                        <p>ИНН подтвержден!</p>
+                    </div>
+                </div>
+                <div class="document">
+                    <button>Загрузить ОГРН</button>
+                    <div class="document-confirm">
+                        <img src="{% static 'Invest/img/doc_icons/ogrn.svg'%}" alt="ОГРН подтвержден">
+                        <p>ОГРН подтвержден!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
 
 
