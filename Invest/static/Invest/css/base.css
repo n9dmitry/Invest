@@ -135,11 +135,34 @@ a {
     align-items: center;
 }
 
+.burger-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    position: relative;
+    background-color: inherit;
+    display: none;
+}
+
+.burger-button>span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    left: 10px;
+}
+
+.burger-button>span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.burger-button>span:nth-child(3) {
+    transform: translateY(10px);
+}
 
 #burger {
     width: 50px;
     height: 50px;
-    margin-left: 10px;
 }
 
 #logo {
@@ -157,7 +180,7 @@ a {
 .categories {
     align-items: center;
     background-color: #D9D9D9;
-    width: 147px;
+    width: 10em;
     height: 44px;
     box-sizing: border-box;
     margin-left: 30px;
@@ -176,13 +199,15 @@ a {
 }
 
 .search>input {
-    width: 700px;
+    width: 80%;
     height: 35px;
     border-radius: 5px;
     border: none;
     margin-right: 5px;
     font-size: 19px;
     padding-left: 10px;
+    margin-left: 10px;
+
 }
 
 .search>input::placeholder {
@@ -218,4 +243,24 @@ a {
 .developers {
     padding-left: 10px;
     align-self: center;
+}
+
+/*Адаптив*/
+@media (max-width: 970px) {
+  .container_searchline>span {
+      margin: 0 3px;
+  }
+  .categories {
+      margin: 5px;
+      width: 7em;
+  }
+  .burger-button {
+    display: block;
+    background-color: #3C90B8;
+  }
+
+}
+
+@media (max-width: 736px) {
+
 }

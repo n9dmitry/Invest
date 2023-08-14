@@ -7,7 +7,6 @@ from .models import Item
 from .forms import ItemForm
 from account.models import Profile
 
-
 def all_items(request):
     """
         Вьюшка для отображения всех объявлений
