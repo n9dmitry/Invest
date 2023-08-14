@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('item.urls')),
     path('accounts/', include('account.urls')),
-    path('dashboard/', include('dashboard.urls')),
+    path('', include('dashboard.urls')),
     path('', include('messanger.urls')),
     path('notifications/', include('notifications.urls')),
     path('pay_services/', include('pay_services.urls'))
