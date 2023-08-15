@@ -27,9 +27,17 @@
     </div>
     <div class="message-panel">
         <!-- Панель написания сообщений и добавления фото -->
-        <input type="text" class="message-input" placeholder="Введите сообщение...">
-        <input type="file" class="photo-input">
-        <button class="send-button">Отправить</button>
+        <input type="file" class="photo-input" id="file-input">
+        <label for="file-input" class="file-label">
+            <img src="{% static 'Invest/img/messenger/attach.svg' %}" alt="Скрепка">
+        </label>
+
+        <textarea rows="4" cols="50" class="message-textarea" placeholder="Введите сообщение..."></textarea>
+
+        <button class="send-button">
+            <img src="{% static 'Invest/img/messenger/send-message.svg' %}" alt="Отправить сообщение">
+
+        </button>
     </div>
 </div>
 
