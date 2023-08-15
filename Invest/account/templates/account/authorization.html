@@ -15,7 +15,14 @@ FoxInvest - Вход
         <h1>Вход</h1>
         {% csrf_token %}
         {{errors}}
-        {{ form.as_p }}
+        <label for="{{ form.username.id_for_label }}">Email</label>
+        {{ form.username }}
+        <br>
+        <p>
+
+            <label for="{{ form.password.id_for_label }}">Пароль</label>
+            {{ form.password }}
+        </p>
         <!-- 
         <label for="{{form.username.id_for_label}}">Email:</label>
         {{form.username}}<br><br>

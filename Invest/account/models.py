@@ -10,6 +10,7 @@ from item.models import Item
 def save_image(instance, filename):
     return '/'.join(['users_avatars', str(instance.user.id), filename])
 
+
 class Profile(models.Model):
     """
         Профиль для пользователя
@@ -21,12 +22,12 @@ class Profile(models.Model):
     phone_number = models.CharField(max_length=20)
     phone_verified = models.BooleanField(default=False)
     is_online = models.BooleanField(default=False)
-    favorites = models.ManyToManyField(Item)
+    favorites = models.ManyToManyField(Item, blank=True, null=True)
     snils = models.ImageField(upload_to=save_image, blank=True, null=True)
     passport = models.ImageField(upload_to=save_image, blank=True, null=True)
     ogrn = models.ImageField(upload_to=save_image, blank=True, null=True)
     inn = models.ImageField(upload_to=save_image, blank=True, null=True)
-    
+
     def __str__(self):
         # pylint: disable=all
         return self.user.email
