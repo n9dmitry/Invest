@@ -39,6 +39,7 @@
     background-color: #90ccea;
     margin: 10px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .message-sent {
@@ -50,11 +51,12 @@
 }
 
 .message-panel {
-    background-color: #f7f4f4;
+    /*background-color: #f7f4f4;*/
     height: 8vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #b9b9b9;
 }
 .attach-sendmessage {
     display: flex;
@@ -86,11 +88,12 @@
     width: 60%;
     height: 80%;
     border-radius: 5px;
-    border: none;
+
     resize: none;
     font-family: Arial, sans-serif;
     font-size: 20px;
     padding-left: 5px;
+    border: 1px solid #cccccc;
 }
 
 .message-textarea::placeholder {
@@ -98,8 +101,10 @@
 }
 
 .send-button {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    border: none;
     border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .send-button>img {
