@@ -1,6 +1,5 @@
 .messenger {
     width: 70%;
-    border: 1px solid black;
     margin-top: 20px;
 }
 
@@ -27,7 +26,7 @@
 }
 
 .dialogue-box {
-    height: 79%;
+    height: 83%;
     background-image: url("/static/Invest/img/messenger/background.svg");
     background-size: contain; /* Растягивает изображение на всю площадь блока */
     background-position: center; /* Выравнивает изображение по центру блока */
@@ -37,7 +36,10 @@
 }
 
 .message-sent, .message-recieved {
-    background-color: #3C90B8;
+    background-color: #90ccea;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .message-sent {
@@ -49,12 +51,63 @@
 }
 
 .message-panel {
-    background-color: #666666;
+    /*background-color: #f7f4f4;*/
+    height: 8vh;
     display: flex;
-    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #b9b9b9;
+}
+.attach-sendmessage {
+    display: flex;
 }
 
-.message-input {
-    height: 30px;
-    width: 50%;
+/*Фото вставить скрепка*/
+.photo-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.file-label img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+/*Конец вставки фото*/
+
+.message-textarea {
+    width: 60%;
+    height: 80%;
+    border-radius: 5px;
+
+    resize: none;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    padding-left: 5px;
+    border: 1px solid #cccccc;
+}
+
+.message-textarea::placeholder {
+  font-size: 14px;
+}
+
+.send-button {
+    /*border: 1px solid black;*/
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.send-button>img {
+    width: 50px;
+    height: 50px;
 }
