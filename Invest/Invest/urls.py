@@ -15,3 +15,11 @@ urlpatterns = [
     path('notifications/', include('notifications.urls')),
     path('pay_services/', include('pay_services.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    # add root static files
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+    # add media static files
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

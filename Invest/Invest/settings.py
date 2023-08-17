@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'dashboard',
     'messanger',
     'notifications',
-    'pay_services'
+    'pay_services',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'account.middleware.LastActivityUpdateMiddleware'
 ]
 
 ROOT_URLCONF = 'Invest.urls'
@@ -168,6 +170,3 @@ AUTHENTICATION_BACKENDS = [
 
 LOGIN_URL = 'account.views.signup'
 LOGIN_REDIRECT_URL = 'all_items'
-
-CELERY_BROKER_URL = "redis://localhost:6379"
-CELERY_RESULT_BACKEND = "redis://localhost:6379"
