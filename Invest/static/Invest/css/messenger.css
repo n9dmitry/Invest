@@ -7,22 +7,90 @@
     display: flex;
     align-items: center; /* Выравнивание по вертикали */
     justify-content: initial;
-    border: 1px solid black;
     height: 10vh;
-    background-color: #2aade4;
+    background-color: #90ccea;
 }
 
-.back-button {
+.messenger-header>a>img {
+    height: 30px;
+    width: 30px;
+    background-color: #90ccea;
+    margin-left: 10px;
+}
 
+.photo-info {
+    height: 60px;
+    width: 80px;
 }
 
 .sender-info {
     margin-left: 20px;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 42%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+.sender-name {
+    font-size: 25px;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+.item-user-info {
+    display: flex;
+}
+
+.item-user-info-status {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.item-user-info-status>p {
+    margin: 0 0 0 10px;
+}
+
+.status {
+    width: 10px;
+    height: 10px;
+}
+
+.offline::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #655e5e;
+    border-radius: 50%;
+    visibility: hidden;
+
+}
+
+.online::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #00cc00;
+    border-radius: 50%;
+}
+
+.info-title {
+    padding: 0 0 0 10px;
+    margin: 0;
 }
 
 .sender-info > img {
-    height: 40px;
-    width: 60px;
+
 }
 
 .dialogue-box {
@@ -35,19 +103,45 @@
     flex-direction: column;
 }
 
-.message-sent, .message-recieved {
+.message-sent, .message-received {
     background-color: #90ccea;
     margin: 10px;
-    padding: 10px;
+    padding: 0 5px;
     border-radius: 10px;
+    position: relative;
 }
 
-.message-sent {
+.message-sent>p, .message-received>p {
+    /*padding: 5px;*/
+}
+
+.message-sent-full {
     align-self: flex-end;
+    display: flex;
 }
 
-.message-recieved {
+.message-received-full {
     align-self: flex-start;
+    display: flex;
+}
+
+
+.message-triangle-sent {
+    width: 0px;
+    height: 34px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #90ccea;
+    transform: rotate(90deg);
+}
+
+.message-triangle-received {
+    width: 0px;
+    height: 34px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #90ccea;
+    transform: rotate(270deg);
 }
 
 .message-panel {
@@ -68,19 +162,19 @@
 }
 
 .file-label {
-  display: inline-block;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  margin-left: 5px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
 .file-label img {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 /*Конец вставки фото*/
 

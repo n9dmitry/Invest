@@ -14,16 +14,40 @@
 <div class="messenger">
     <div class="messenger-header">
         <!-- Кнопка "Вернуться к сообщениям" -->
-        <a href="{% url 'chat' %}"><button class="back-button">Назад</button></a>
+        <a href="{% url 'chat' %}">
+                <img src="{% static 'Invest/img/messenger/backspace.svg' %}">
+        </a>
         <!-- Имя отправителя и фото -->
         <div class="sender-info">
-            <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото">
-            <span class="sender-name">Валера Красножопов</span>
+            <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Фото" class="photo-info">
+            <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="Фото авы" class="overlay">
+        </div>
+        <div>
+            <div class="item-user-info">
+                <div class="item-user-info-status">
+                    <p class="sender-name">Игнат</p>
+                    <div class="status offline"></div>
+                    <div class="status online"></div>
+                    <p>В сети в 16:40</p>
+                </div>
+            </div>
+            <p class="info-title">Кафе лофт нужны бабки </p>
         </div>
     </div>
     <div class="dialogue-box">
-        <div class="message-sent">Здарова</div>
-        <div class="message-recieved">Здарова</div>
+        <div class="message-sent-full">
+            <div class="message-sent">
+                <p>Здарова</p>
+            </div>
+            <div class="message-triangle-sent"></div>
+            <div class="triangle"></div>
+        </div>
+        <div class="message-received-full">
+            <div class="message-triangle-received"></div>
+            <div class="message-received">
+                <p>Здарова</p>
+            </div>
+        </div>
     </div>
     <div class="message-panel">
         <!-- Панель написания сообщений и добавления фото -->
