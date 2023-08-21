@@ -17,9 +17,16 @@ from .forms import ItemForm
 from account.models import Profile
 from .forms import RegistrationForm
 from .forms import SignupForm
+from django.contrib.auth.decorators import login_required
 
 def authorization(request):
     return render(request, 'account/authorization.html')
+
+def account_review(request):
+    return render(request, 'account/account_review.html')
+
+def add_review(request):
+    return render(request, 'account/add_review.html')
 
 def my_items(request):
     """
@@ -31,6 +38,7 @@ def my_items(request):
     }
     return render(request, 'account/my_items.html', context)
 
+@login_required
 def favorites(request):
     """
         Представление показывает избранные Item пользователя

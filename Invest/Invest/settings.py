@@ -168,5 +168,5 @@ AUTHENTICATION_BACKENDS = [
     'account.auth.EmailAuthBackend',
 ]
 
-LOGIN_URL = 'account.views.signup'
+LOGIN_URL = 'registration'
 LOGIN_REDIRECT_URL = 'all_items'

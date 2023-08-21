@@ -78,23 +78,31 @@ FoxInvest - Оффер #
                     });
             }
         </script>
-        <div class="userinfo">
-            <div class="username">{{ item.user.email }}</div>
-            {% if creater_profile.avatar %}
-            <div class="avatar"><img src="{{ creater_profile.avatar.url }}"></div>
-            {% if creater_profile.user_is_online %}
-            Online
-            {% else %}
-            Offline
-            {% endif %}
-            {% else %}
+       <div class="userinfo">
+           <div>
+                <div class="username">{{ item.user.email }}</div>
+               <div class="rating">
+                   <a href="{% url 'account_review' %}">
+                        <div class="stars">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                   </a>
+               </div>
+           </div>
             <div class="avatar">
-                <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="">
+            {% if creater_profile.avatar %}
+              <img src="{{ creater_profile.avatar.url }}">
+            {% else %}
+              <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="">
+            {% endif %}
             </div>
 
-            {% endif %}
-        </div>
-        <div class="othera"><button>Другие объявления пользователя</button></div>
+            </div>
+            <div class="othera"><button>Другие объявления пользователя</button></div>
     </div>
 </div>
 {% endblock %}
