@@ -1,0 +1,38 @@
+
+.main-block {
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item>div, .item>h3, .item>p {
+    padding: 5px;
+}
+
+.image>img {
+    height: 60px;
+    width: 100px;
+}
+
+.stars {
+  color: gold;
+}
+
+.star {
+    font-size: 38px;
+}
+
+.rating-chose {
+    display: flex;
+}
+
+textarea {
+    width: 80%;
+    height: 20%;
+    resize: none;
+    border-radius: 10px;
+    padding: 5px;
+}

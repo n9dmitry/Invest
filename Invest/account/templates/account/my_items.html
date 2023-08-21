@@ -1,0 +1,74 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/my_item.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest - Мои объявления
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="main-section">
+    <div class="title">
+        <h2>Мои объявления</h2>
+    </div>
+    <a href="{% url 'additem' %}">
+        <button class="green-button">Добавить объявление</button>
+    </a>
+
+
+    <!-- Добавьте другие сообщения здесь -->
+
+    <div class="ad-block">
+        <div class="item_options">
+            <span class="span_photo">Фото</span>
+            <span class="span_title">Название</span>
+            <span class="span_views">Статистика объявления</span>
+            <span class="span_addtofavorite">Статус</span>
+            <span class="span_contactviews">Действие</span>
+        </div>
+    </div>
+
+    <div class="item-block">
+        {% for item in user_items %}
+        <div class="item-details">
+            <div class="item-image">
+                <a href="{% url 'iteminfo' item_id=item.id %}">
+                    <img src="{{ item.images.first.image.url }}" alt="Фото">
+                </a>
+            </div>
+            <span>{{ item.title }}</span>
+            <div>
+                <span>Просмотров: {{ item.count_view }}</span></br>
+                <span>Избранное: {{ item.count_add_favorite.count }}</span></br>
+                <span>Контакты: {{ item.count_get_contacts }}</span>
+            </div>
+            <span>{{ item.status }}</span>
+            <div class="actions">
+                <a href="{% url 'edit_item' item_id=item.id %}">Редактировать</a>
+                <a href="">Деактивировать</a>
+                <a href="">Поднять</a>
+                <a href="{% url 'delete_item' item_id=item.id%}">Удалить</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+    <!--    Див нужный -->
+
+
+    <!-- Здесь можно добавить объявления в виде блоков или других элементов -->
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+head, body {
+    margin: 0;
+}
+
+.header {
+    background-color: #3C90B8;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 1;
+}

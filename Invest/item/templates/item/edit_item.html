@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/edit_item.css' %} ">
+{% endblock %}
+
+{% block title %}
+Редактирование объявления
+{% endblock %}
+
+{% block content %}
+<div class="form_container">
+    <form method="POST">
+        {% csrf_token %}
+        {{ errors }}
+        <h2>{{ form.instance.title }}</h2>
+        <div>
+            <label for="{{ form.title.id_for_label }}">Название: </label>
+            {{ form.title }}
+        </div>
+        <div>
+            <label for="{{ form.description.id_for_label }}">Описание: </label>
+            {{ form.description }}
+        </div>
+        <div>
+            <label for="{{ form.title.id_for_label }}">Город: </label>
+            {{ form.city }}
+        </div>
+        <div>
+            <label for="{{ form.title.id_for_label }}">Нужная сумма, ₽: </label>
+            {{ form.required_investment }}
+        </div>
+        <div>
+            <label for="{{ form.title.id_for_label }}">Рентабельность, ROI: </label>
+            {{ form.profit_per_month }}
+        </div>
+        <div>
+            <label for="{{ form.title.id_for_label }}">Категории: </label>
+            {{ form.category }}
+        </div>
+        <input type="text" name="user" hidden value="{{ request.user.id }}">
+        <button type="submit">Редактировать</button>
+    </form>
+</div>
+{% endblock %}

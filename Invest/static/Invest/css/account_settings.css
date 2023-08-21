@@ -1,0 +1,113 @@
+.account-info-settings>h4,.account-info-settings>input {
+    margin: 5px;
+}
+
+.main-block {
+    display: flex;
+}
+
+.documents {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.document {
+    margin-right: 50px;
+}
+
+.document-confirm,
+.not_verified {
+    display: flex;
+    width: 15vw;
+    margin: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.document-confirm {
+    background-color: #b6e9ee;
+}
+
+.not_verified {
+    background-color: #e14e76;
+}
+
+
+.document-confirm>p {
+    font-size: 12px;
+}
+
+.document-confirm>img {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+
+.not_verified>p {
+    font-size: 12px;
+}
+
+.personal-settings {
+    display: flex;
+}
+
+.account-info-settings {
+    border: 1px solid black;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    margin: 2em;
+    background-color: #f5f8f8;
+}
+
+/*Блок с фио*/
+
+.account-info-settings>img {
+    background-color: #3C90B8;
+}
+
+.account-info-settings textarea {
+    width: 30vw;
+    height: 20vh;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.account-info-settings button {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.account-info-settings img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/*Блок с фио конец*/
+
+/*Адаптив*/
+@media (max-width: 780px) {
+
+    .document-confirm, .not_verified {
+        width: 25vw;
+    }
+
+    .main-block {
+    display: block;
+}
+
+    h4 {
+        font-size: 10px;
+    }
+}
+
+

@@ -1,0 +1,30 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/pay_services.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest - Покупка платного аккаунта
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="container">
+    <h1>Платные услуги</h1>
+    <div class="service">
+      <h2>Платный аккаунт</h2>
+      <p>Вы получаете доступ к закрытым объявлениям для инвесторов с платным аккаунтом.</p>
+      <button class="buy-button">Купить платный аккаунт</button>
+    </div>
+    <div class="service">
+      <h2>Продвижение объявления</h2>
+      <p>Заказать продвижение вашего объявления вы можетее в разделе "Мои объявления" по кнопке "Поднять"</p>
+      <a href="{% url 'my_items' %}">Перейти в "Мои объявления"</a>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -38,9 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'reg',
     'item',
     'account',
+    'dashboard',
+    'messanger',
+    'notifications',
+    'pay_services',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'account.middleware.LastActivityUpdateMiddleware'
 ]
 
 ROOT_URLCONF = 'Invest.urls'
@@ -129,7 +134,39 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# EMAIL
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+
+EMAIL_PORT = 465
+
+EMAIL_USE_SSL = True
+
+
+EMAIL_HOST_USER = 'mari.volkova.22@yandex.ru'
+
+EMAIL_HOST_PASSWORD = 'slxmzbuzijwnceth'
+
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+SERVER_EMAIL = EMAIL_HOST_USER
+
+EMAIL_ADMIN = EMAIL_HOST_USER
+
+AUTHENTICATION_BACKENDS = [
+    'account.auth.EmailAuthBackend',
+]
+
+LOGIN_URL = 'registration'
+LOGIN_REDIRECT_URL = 'all_items'

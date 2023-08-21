@@ -1,0 +1,66 @@
+
+
+h1 {
+  text-align: center;
+}
+
+.rating {
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    font-weight: bold;
+}
+
+.rating-number {
+  font-size: 24px;
+}
+
+.stars {
+  color: gold;
+}
+
+.reviews {
+  margin: 20px;
+}
+
+.review {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.comment {
+  margin-top: 5px;
+}
+
+.add-review-button {
+    margin: 0px;
+    font-weight: normal;
+    box-sizing: border-box;
+    line-height: 1.375;
+    font-size: 16px;
+    vertical-align: middle;
+    display: inline;
+}
+
+.add-review-button>a {
+    color: inherit;
+    text-decoration: inherit;
+}

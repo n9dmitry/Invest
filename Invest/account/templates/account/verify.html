@@ -1,0 +1,14 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest - Активация аккаунта
+{% endblock %}
+
+{% block inner_content %}
+<h1>{{ message }}</h1>
+{% endblock %}

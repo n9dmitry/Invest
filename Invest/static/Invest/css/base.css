@@ -2,18 +2,25 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
 }
 
-a:hover, li:hover, .login-links > a > p:hover {
+a:hover,
+li:hover,
+.login-links>a>p:hover {
     transform: scale(1.03);
     transition: transform 0.3s
 }
 
+a:visited {
+    color: white;
+}
+
 .header {
-    /*height: 185px;*/
     width: auto;
     display: flex;
     flex-direction: column;
+
 }
 
 .topline {
@@ -23,11 +30,21 @@ a:hover, li:hover, .login-links > a > p:hover {
     justify-content: space-between;
 }
 
-.topline a:link {
+.topline a:link,
+.topline a:visited {
     text-decoration: none;
     /* Убирает подчеркивание */
     color: inherit;
     /* Наследует цвет текста от родительского элемента */
+}
+
+a {
+    text-decoration: none;
+}
+
+.topline a:hover,
+.topline a:active {
+    color: inherit;
 }
 
 .lefttopline {
@@ -60,7 +77,7 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 
 
-.righttopline > div {
+.righttopline>div {
     padding-right: 30px;
     display: flex;
     justify-content: flex-end;
@@ -71,12 +88,14 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 }
 
-.righttopline > div > img {
+.righttopline>div>img {
     width: 35px;
     height: 35px;
 }
 
-.favorite_icon > a > img, .chat_icon > a > img, .notifications_icon > a > img {
+.favorite_icon>a>img,
+.chat_icon>a>img,
+.notifications_icon>a>img {
     width: 25px;
 }
 
@@ -91,7 +110,7 @@ a:hover, li:hover, .login-links > a > p:hover {
     display: flex;
 }
 
-.login-links > a > p {
+.login-links>a>p {
     margin: 0 3px;
 }
 
@@ -105,7 +124,7 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 }
 
-.searchline > img {
+.searchline>img {
     width: 60px;
     height: 60px;
 
@@ -116,11 +135,34 @@ a:hover, li:hover, .login-links > a > p:hover {
     align-items: center;
 }
 
+.burger-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    position: relative;
+    background-color: inherit;
+    display: none;
+}
+
+.burger-button>span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    left: 10px;
+}
+
+.burger-button>span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.burger-button>span:nth-child(3) {
+    transform: translateY(10px);
+}
 
 #burger {
     width: 50px;
     height: 50px;
-    margin-left: 10px;
 }
 
 #logo {
@@ -128,16 +170,17 @@ a:hover, li:hover, .login-links > a > p:hover {
     height: 50px;
 }
 
-.container_searchline > span {
+.container_searchline>span {
     color: white;
     font-size: 30px;
     font-family: 'Inter', sans-serif;
     margin: 0 10px;
 }
+
 .categories {
     align-items: center;
     background-color: #D9D9D9;
-    width: 147px;
+    width: 10em;
     height: 44px;
     box-sizing: border-box;
     margin-left: 30px;
@@ -155,17 +198,19 @@ a:hover, li:hover, .login-links > a > p:hover {
 
 }
 
-.search > input {
-    width: 700px;
+.search>input {
+    width: 80%;
     height: 35px;
     border-radius: 5px;
     border: none;
     margin-right: 5px;
     font-size: 19px;
     padding-left: 10px;
+    margin-left: 10px;
+
 }
 
-.search > input::placeholder {
+.search>input::placeholder {
     font-size: 15px;
 }
 
@@ -175,7 +220,7 @@ a:hover, li:hover, .login-links > a > p:hover {
     border-radius: 5px;
 }
 
-.findbutton > img {
+.findbutton>img {
     height: 32px;
     width: 32px;
     align-self: center;
@@ -189,11 +234,8 @@ a:hover, li:hover, .login-links > a > p:hover {
 }
 
 .footer {
-    /*margin-top: 200px;*/
     display: flex;
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    background-color: #3C90B8;
+
     height: 50px;
     width: 100%;
 }
@@ -203,6 +245,22 @@ a:hover, li:hover, .login-links > a > p:hover {
     align-self: center;
 }
 
-.developers>a {
-    color: white;
+/*Адаптив*/
+@media (max-width: 970px) {
+  .container_searchline>span {
+      margin: 0 3px;
+  }
+  .categories {
+      margin: 5px;
+      width: 7em;
+  }
+  .burger-button {
+    display: block;
+    background-color: #3C90B8;
+  }
+
+}
+
+@media (max-width: 736px) {
+
 }

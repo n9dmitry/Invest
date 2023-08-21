@@ -10,6 +10,7 @@
       <list>
         <option value="$MODULE_DIR$/Invest/reg/templates" />
         <option value="$MODULE_DIR$/Invest/account/templates" />
+        <option value="$MODULE_DIR$/Invest/dashboard/templates" />
       </list>
     </option>
   </component>

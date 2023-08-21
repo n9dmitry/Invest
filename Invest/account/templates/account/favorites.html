@@ -1,0 +1,36 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/favorite.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="main-section">
+    <div class="title">
+        <h2>Избранное</h2>
+    </div>
+
+    <div class="item-space">
+        {% for item in favorites_items %}
+        <div class="item">
+
+            <a href="{% url 'iteminfo' item_id=item.id %}">
+                <img src="{{ item.images.first.image.url }}">
+            </a>
+
+
+            <a href="{% url 'iteminfo' item_id=item.id %}"> {{ item.title }} </a>
+
+            <p> Предлагаем вложиться в наш бизнес!</br> Подробности в описании!</br></br></br></br> </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

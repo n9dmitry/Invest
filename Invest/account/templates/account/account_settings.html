@@ -1,0 +1,85 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/account_settings.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="main-section">
+    <div class="title">
+        <h2>Настройки аккаунта</h2>
+    </div>
+
+    <h4>Загрузка документов подтвердит вашу лояльность как для соискателей, так и для инвесторов</br>
+        После подтверждения документов будут видны в вашем профиле
+    </h4>
+    <!--        <button>Подтвердить номер телефона</button>-->
+    <!--        </br>-->
+    <button>Сменить email</button>
+    <button>Сменить пароль</button>
+
+    <div class="main-block">
+        <div class="account-info-settings">
+            <h3>Персональные данные</h3>
+            <h4>Имя</h4>
+            <input type="text" id="name" value="Иван Иванов" readonly>
+            <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="">
+            <button id="changeAvatar">Изменить Аватарку</button>
+            <h4>Телефон</h4>
+            <input type="text" id="phone" value="+7(ХХХ)-ХХХ-ХХ-ХХ" readonly>
+            <h4>Город</h4>
+            <input type="text" id="city" value="Москва" readonly>
+            <h4>Информация о себе | Деятельности</h4>
+            <textarea id="message" name="message" required="" value="Информация о себе | Деятельности"
+                readonly></textarea>
+            </br>
+            <button id="saveChanges">Сохранить изменения</button>
+        </div>
+        <div class="documents">
+
+            <!-- <div class="not_verified">
+                <p>Паспорт не подтвержден</p>
+            </div> -->
+            <div class="document">
+                <h3>Документы</h3>
+                <button>Загрузить Паспорт</button>
+                <div class="document-confirm">
+                    <img src="{% static 'Invest/img/doc_icons/passport.svg'%}" alt="Паспорт подтвержден">
+                    <p>Паспорт подтвержден!</p>
+                </div>
+                <div class="document">
+                    <button>Загрузить СНИЛС</button>
+                    <div class="document-confirm">
+                        <img src="{% static 'Invest/img/doc_icons/snils.svg'%}" alt="ОГРН подтвержден">
+                        <p>СНИЛС подтвержден!</p>
+                    </div>
+                </div>
+                <div class="document">
+                    <button>Загрузить ИНН</button>
+                    <div class="document-confirm">
+                        <img src="{% static 'Invest/img/doc_icons/inn.svg'%}" alt="ИНН подтвержден">
+                        <p>ИНН подтвержден!</p>
+                    </div>
+                </div>
+                <div class="document">
+                    <button>Загрузить ОГРН</button>
+                    <div class="document-confirm">
+                        <img src="{% static 'Invest/img/doc_icons/ogrn.svg'%}" alt="ОГРН подтвержден">
+                        <p>ОГРН подтвержден!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/registration.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest - Регистрация
+{% endblock %}
+
+{% block content %}
+<div class="general">
+    {{errors}}
+    <form method="post" enctype="multipart/form-data">
+        <div class="reg">
+            <h1>Регистрация</h1>
+            {% csrf_token %}
+            <p>Имя: {{ form.name }}</p>
+            <p>Почта: {{ form.email}}</p>
+            <p>Номер телефона: {{ form.phone_number }}</p>
+            <p>Ваше фото: {{ form.avatar }}</p>
+            <p>Меня больше интересует:</p>
+            <p>{{ form.interest }}</p>
+            <p>Пароль: {{ form.password1 }}</p>
+            <p>Повторите пароль: {{ form.password2 }}</p>
+            <input id='regbutton' type="submit" value="Зарегистрироваться"><br>
+            <a href="#">Забыли пароль?</a>
+            <p>
+                {{ error }}
+            </p>
+        </div>
+    </form>
+    <div class="enter">
+        <span>Уже есть аккаунт?</span>
+        <div class="enter-button">
+            <a href="{% url 'authorization' %}">Войти</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/iteminfo.css' %} ">
+{% endblock %}
+
+{% block title %}
+FoxInvest - Оффер #
+{% endblock %}
+
+{% block content %}
+<div class="details">
+    <div class="adinfo">
+        <p id="p-category"> Категория: {{ item.category.first.title }} </p>
+        <h1>{{ item.title }}</h1>
+        <div><button onclick="addToFavorites('{{ item.id }}')" class="addtofavorite"> ♡ Добавить в избранное </button>
+        </div>
+        <img src="{{ item.images.first.image.url }}">
+        <h2>Описание</h2>
+        <p>
+            {{ item.description }}
+        </p>
+        </br>
+        <a class="claim" href="#">Пожаловаться на объявление</a>
+    </div>
+    <div class="contacts">
+        <div class="message"><a href="{% url 'messenger' %}" class="button-link-messanger">Написать сообщение</a></div>
+        <div class="show_contacts"><a class="button-link-contacts" onclick="showModal('{{item.id}}')">Показать
+                контакты</a></div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>{{ creater_profile.phone_number }}</p>
+            </div>
+        </div>
+
+        <script>
+            function showModal(item_id) {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "block";
+                fetch('/increment_count_phone_number_item/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With': 'XMLHttpRequest',  // Добавление заголовка для пометки запроса как Ajax
+                        'X-CSRFToken': '{{ csrf_token }}'  // Добавление CSRF токена, если необходимо
+                    },
+                    body: 'item_id=' + encodeURIComponent(item_id)
+                })
+                    .catch(error => {
+                        // Обработка ошибки
+                    });
+            }
+
+            function closeModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+            function addToFavorites(item_id) {
+                fetch('/accounts/add_favorite/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With': 'XMLHttpRequest',  // Добавление заголовка для пометки запроса как Ajax
+                        'X-CSRFToken': '{{ csrf_token }}'  // Добавление CSRF токена, если необходимо
+                    },
+                    body: 'item_id=' + encodeURIComponent(item_id)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'error') {
+                            alert('Уупс.. не удалось добавить в избранное, извините за неудобства')
+                        }
+                    })
+                    .catch(error => {
+                        // Обработка ошибки
+                    });
+            }
+        </script>
+       <div class="userinfo">
+           <div>
+                <div class="username">{{ item.user.email }}</div>
+               <div class="rating">
+                   <a href="{% url 'account_review' %}">
+                        <div class="stars">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                   </a>
+               </div>
+           </div>
+            <div class="avatar">
+            {% if creater_profile.avatar %}
+              <img src="{{ creater_profile.avatar.url }}">
+            {% else %}
+              <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="">
+            {% endif %}
+            </div>
+
+            </div>
+            <div class="othera"><button>Другие объявления пользователя</button></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+
+{% endblock %}
+
+{% block title %}
+FoxInvest - Мои объявления
+{% endblock %}
+{% block content %}
+
+<div class="main-panel">
+    <div class="personal-account">
+        <div class="avatar"><img src="{% static 'Invest/img/unnamed.jpg' %}"></div>
+        <div class="name">Валера Валера</div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="{% url 'my_items' %}">
+                <p>Мои объявления</p>
+            </a></div>
+        <div class="menu-item"><a href="{% url 'favorite' %}">
+                <p>Избранное</p>
+            </a></div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="{% url 'chat' %}">
+                <p>Сообщения</p>
+            </a></div>
+        <div class="menu-item"><a href="{% url 'notifications' %}">
+                <p>Уведомления</p>
+            </a></div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="{% url 'pay_services' %}">
+                <p>Платные услуги</p>
+            </a></div>
+        <div class="divider"></div>
+        <div class="menu-item"><a href="{% url 'account_settings' %}">
+                <p>Настройки аккаунта</p>
+            </a></div>
+        <div class="menu-item"><a href="{% url 'logout' %}">
+                <p>Выйти</p>
+            </a></div>
+    </div>
+    {% block inner_content %}{% endblock %}
+</div>
+
+{% endblock %}
