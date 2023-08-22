@@ -6,6 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import activate
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -20,5 +21,14 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='account/logout.html'), name='logout'),
     path('account_review/', views.account_review, name='account_review'),
     path('add_review/', views.add_review, name='add_review'),
+    # URL-шаблон для отправки электронной почты с инструкциями по восстановлению пароля
+    path('password_reset/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name='password_reset'),
+    # URL-шаблон для страницы подтверждения восстановления пароля
+    path('password_reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),
+       name='password_reset_confirm'),
+    # URL-шаблон для страницы успешного завершения восстановления пароля
+    path('password_reset/done/', auth_views.PasswordResetCompleteView.as_view(),
+       name='password_reset_done'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
