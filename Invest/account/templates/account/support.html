@@ -16,18 +16,23 @@
     <h1>Запрос в техподдержку</h1>
     <div class="container">
 
-        <form action="submit.php" method="POST">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required>
+<!--        <form method="post">-->
+<!--            -->
+<!--            {{ form.as_p }}-->
+<!--&lt;!&ndash;            <label for="name">Имя:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" id="name" name="name" required>&ndash;&gt;-->
 
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
+<!--&lt;!&ndash;            <label for="email">Email:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" id="email" name="email" required>&ndash;&gt;-->
 
-            <label for="message">Сообщение:</label>
-            <textarea id="message" name="message" required></textarea>
+<!--&lt;!&ndash;            <label for="message">Сообщение:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <textarea id="message" name="message" required></textarea>&ndash;&gt;-->
 
-            <input type="submit" value="Отправить">
-        </form>
+
+<!--        </form>-->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
     </div>
 </body>
 {% endblock %}
