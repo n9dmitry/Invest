@@ -25,7 +25,7 @@ FoxInvest - Регистрация
             <p>Пароль: {{ form.password1 }}</p>
             <p>Повторите пароль: {{ form.password2 }}</p>
             <input id='regbutton' type="submit" value="Зарегистрироваться"><br>
-            <a href="#">Забыли пароль?</a>
+            <a href="{% url 'password_reset'%}">Забыли пароль?</a>
             <p>
                 {{ error }}
             </p>

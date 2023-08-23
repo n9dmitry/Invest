@@ -18,6 +18,45 @@ from account.models import Profile
 from .forms import RegistrationForm
 from .forms import SignupForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetCompleteView, PasswordResetDoneView
+from .forms import SupportEmailForm
+from django.core.mail import send_mail
+from django.urls import reverse
+
+
+def send_support_email(request):
+    form_action = reverse('send_support_email')
+
+    if request.method == 'POST':
+        form = SupportEmailForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            send_mail(
+                'Новое сообщение с формы',
+                f'Отправитель: {name}\nEmail: {email}\nСообщение: {message}',
+                email,
+                ['starwolfinvest@yandex.ru'],  # Замените на адрес получателя
+                fail_silently=False,
+            )
+            return render(request, 'support_email_success.html')
+    else:
+        form = SupportEmailForm()
+    return render(request, 'support_email_form.html', {'form': form})
+
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'password_reset_form.html'
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = 'password_reset_confirm.html'
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'password_reset_complete.html'
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'password_reset_done.html'
 
 def authorization(request):
     return render(request, 'account/authorization.html')
@@ -90,7 +129,7 @@ def signup(request):
             user.username = '_'.join([request.POST['name'], str(user.pk)])
             user.save()
 
-            Profile(    
+            Profile(
                 user=user,
                 phone_number=request.POST['phone_number'],
                 avatar = request.FILES['avatar'],
@@ -135,3 +174,6 @@ def activate(request, uidb64, token):
         return render(request, 'account/verify.html', {'message':'Спасибо за регистрацию, ваш аккаунт активен!'})
     else:
         return render(request, 'account/verify.html', {'message':'Извините, но ссылка более не действительна!'})
+
+def support(request):
+    return render(request, 'item/support.html')

@@ -1,7 +1,18 @@
-form {
+.main-block {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+}
+
+.main-block>a {
+    color: #855E5E;
+    padding: 10px;
+}
+
+form {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
     /*margin-bottom: 150px;*/
 }
 

@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from .views import activate
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import views as auth_views
-
+from .views import CustomPasswordResetView, CustomPasswordResetConfirmView, CustomPasswordResetDoneView, CustomPasswordResetCompleteView
 
 urlpatterns = [
     path('my_items', views.my_items, name='my_items'),
@@ -21,14 +21,16 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='account/logout.html'), name='logout'),
     path('account_review/', views.account_review, name='account_review'),
     path('add_review/', views.add_review, name='add_review'),
-    # URL-шаблон для отправки электронной почты с инструкциями по восстановлению пароля
-    path('password_reset/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name='password_reset'),
-    # URL-шаблон для страницы подтверждения восстановления пароля
-    path('password_reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),
+    # Восстановление почты
+    path('password_reset/', CustomPasswordResetView.as_view(), name='password_reset'),
+    path('reset/<uidb64>/<token>/', CustomPasswordResetConfirmView.as_view(),
        name='password_reset_confirm'),
-    # URL-шаблон для страницы успешного завершения восстановления пароля
-    path('password_reset/done/', auth_views.PasswordResetCompleteView.as_view(),
-       name='password_reset_done'),
+    path('reset/done/', CustomPasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/complete/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    # Конец восстановления почты почты
+    path('support/', views.support, name='support'),
+    path('send_support_email/', views.send_support_email, name='send_support_email'),# Отправка почты в поддержку
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
