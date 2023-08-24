@@ -43,7 +43,7 @@ h1 {
     height: 100px;
 }
 
-.container input[type="submit"] {
+.container>form>button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -55,6 +55,6 @@ h1 {
     cursor: pointer;
 }
 
-.container input[type="submit"]:hover {
+.container>form>button:hover {
     background-color: #45a049;
 }

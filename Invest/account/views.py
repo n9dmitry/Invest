@@ -13,38 +13,47 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str 
 from .token import account_activation_token
 from django.core.mail import EmailMessage 
-from .forms import ItemForm
+from .forms import ItemForm, SupportMailForm
 from account.models import Profile
 from .forms import RegistrationForm
 from .forms import SignupForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetCompleteView, PasswordResetDoneView
-from .forms import SupportEmailForm
+from .forms import SupportMailForm
 from django.core.mail import send_mail
 from django.urls import reverse
 
+def support_email_success(request):
+    return render(request, 'support_email_success.html')
 
-def send_support_email(request):
-    form_action = reverse('send_support_email')
-
+def support(request):
     if request.method == 'POST':
-        form = SupportEmailForm(request.POST)
+        form = SupportMailForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
 
+            # Сохранение данных в базу данных
+            support_mail = form.save()
+
+            # Отправка электронной почты
             send_mail(
-                'Новое сообщение с формы',
-                f'Отправитель: {name}\nEmail: {email}\nСообщение: {message}',
-                email,
-                ['starwolfinvest@yandex.ru'],  # Замените на адрес получателя
+                f'Письмо в техподдержку от {name}',
+                f'From: {email}\n\nMessage: {message}',
+                'starwolfinvest@yandex.ru',  # Отправитель
+                ['starwolfinvest@yandex.ru'],  # Получатель(и)
                 fail_silently=False,
             )
-            return render(request, 'support_email_success.html')
+
+            # Перенаправление на страницу успешной отправки
+            return render(request, 'account/support_email_success.html')
+
     else:
-        form = SupportEmailForm()
-    return render(request, 'support_email_form.html', {'form': form})
+        form = SupportMailForm()
+
+    context = {'form': form}
+    return render(request, 'account/support.html', context)
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'password_reset_form.html'
@@ -175,5 +184,5 @@ def activate(request, uidb64, token):
     else:
         return render(request, 'account/verify.html', {'message':'Извините, но ссылка более не действительна!'})
 
-def support(request):
-    return render(request, 'item/support.html')
+# def support(request):
+#     return render(request, 'account/support.html')
