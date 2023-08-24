@@ -4,16 +4,16 @@
     align-items: center;
 }
 
-.main-block>a {
+#reset_password_button {
     color: #855E5E;
     padding: 10px;
 }
 
 form {
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*margin-bottom: 150px;*/
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
 .authorization {
@@ -30,6 +30,7 @@ form {
     border: None;
     font-size: 25px;
     color: white;
+    margin: 10px;
 }
 
 .main-container {

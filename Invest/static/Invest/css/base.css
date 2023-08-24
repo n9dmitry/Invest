@@ -99,6 +99,10 @@ a {
     width: 25px;
 }
 
+#favorite_icon {
+  fill: white;
+}
+
 .login {
     align-items: inherit;
     display: flex;

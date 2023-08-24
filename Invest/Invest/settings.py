@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'dashboard',
     'messanger',
     'notifications',
-    'pay_services'
+    'pay_services',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'Invest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'account', 'templates', 'registration')],
+        'DIRS': [os.path.join(BASE_DIR, 'account', 'templates', 'registration', 'news')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

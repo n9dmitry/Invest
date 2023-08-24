@@ -8,9 +8,9 @@
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/Invest/reg/templates" />
         <option value="$MODULE_DIR$/Invest/account/templates" />
         <option value="$MODULE_DIR$/Invest/dashboard/templates" />
+        <option value="$MODULE_DIR$/Invest/news/templates" />
       </list>
     </option>
   </component>
