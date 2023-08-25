@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'notifications',
     'pay_services',
     'debug_toolbar',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,9 @@ ROOT_URLCONF = 'Invest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'account', 'templates', 'registration')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'account', 'templates', 'registration'), # Добавьте эту строку
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

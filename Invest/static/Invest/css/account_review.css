@@ -1,7 +1,7 @@
 
 
 h1 {
-  text-align: center;
+  text-align: inherit;
 }
 
 /*.main-block {*/
@@ -29,8 +29,11 @@ h1 {
 }
 
 .review {
-  display: flex;
-  margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 0 30px;
+    border-radius: 15px;
 }
 
 .avatar {
@@ -56,13 +59,15 @@ h1 {
 }
 
 .add-review-button {
-    margin: 0px;
-    font-weight: normal;
-    box-sizing: border-box;
-    line-height: 1.375;
-    font-size: 16px;
-    vertical-align: middle;
-    display: inline;
+    display: block;
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .add-review-button>a {

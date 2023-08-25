@@ -29,8 +29,7 @@ urlpatterns = [
     path('reset/complete/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
     # Конец восстановления почты почты
     path('support/', views.support, name='support'),
-    path('send_support_email/', views.send_support_email, name='send_support_email'),# Отправка почты в поддержку
-
+    path('support/sent/', views.support_email_success, name='support_email_success'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

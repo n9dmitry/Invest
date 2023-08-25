@@ -12,6 +12,6 @@ urlpatterns = [
     path('delete_item/<int:item_id>', views.delete_item, name='delete_item'),
     path('about/', views.about, name='about'),
     path('increment_count_phone_number_item/', views.increment_count_phone_number_item,
-         name='increment_count_phone_number_item')
+         name='increment_count_phone_number_item'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

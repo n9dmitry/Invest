@@ -28,6 +28,7 @@
                         <li><a href="{% url 'all_items' %}">Главная</a></li>
                         <li><a href="{% url 'about' %}">О нас</a></li>
                         <li><a href="{% url 'support' %}">Поддержка</a></li>
+                        <li><a href="{% url 'news/news_list' %}">Новости</a></li>
 
                     </ul>
                 </nav>
@@ -35,7 +36,7 @@
             <div class="righttopline">
                 <div class="favorite_icon">
                     <a href="{% url 'favorite' %}">
-                        <img src="{% static 'Invest/img/righttopline/favourites.svg' %}">
+                        <img id="favorite_icon" src="{% static 'Invest/img/righttopline/favourites.svg' %}">
                     </a>
 
                 </div>
