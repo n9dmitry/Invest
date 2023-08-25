@@ -128,14 +128,15 @@ def signup(request):
             user.save()
             user.username = '_'.join([request.POST['name'], str(user.pk)])
             user.save()
-
-            Profile(
+            profile = Profile(
                 user=user,
                 phone_number=request.POST['phone_number'],
-                avatar = request.FILES['avatar'],
+                avatar = request.FILES['avatar'] or '',
                 interest=request.POST['interest']
-                ).save()
-
+            )
+            if 'avatar' in request.FIELS:
+                profile.avatar = request.FIELS['avatar']
+            profile.save()
             current_site = get_current_site(request)
             mail_subject = 'Ссылка для активации отправлена ​​на ваш адрес электронной почты'
             message = render_to_string('account/acc_activate_email.html',
