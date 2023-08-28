@@ -4,12 +4,12 @@ from .forms import NewsForm
 
 
 def dashboard_news(request):
-    return render(request, 'dashboard_news.html')
+    return render(request, 'news/dashboard_news.html')
 
 
 def news_list(request):
     # news = News.objects.all()
-    return render(request, 'news_list.html'
+    return render(request, 'news/news_list.html'
                   # , {'news': news}
                   )
 

@@ -40,11 +40,20 @@ def support(request):
             # Отправка электронной почты
             send_mail(
                 f'Письмо в техподдержку от {name}',
-                f'From: {email}\n\nMessage: {message}',
+                f'From: {email}\n\nВаше сообщение получено: {message}',
                 'starwolfinvest@yandex.ru',  # Отправитель
-                ['starwolfinvest@yandex.ru'],  # Получатель(и)
+                ['starwolfinvest@yandex.ru', email],  # Получатель(и)
                 fail_silently=False,
             )
+
+            # send_mail(
+            #     f'Письмо в техподдержку от {name}',
+            #     f'From: {email}\n\nВаше сообщение получено: {message}',
+            #     'starwolfinvest@yandex.ru',  # Отправитель
+            #     ['starwolfinvest@yandex.ru', email],  # Получатель(и)
+            #     fail_silently=False,
+            # )
+
 
             # Перенаправление на страницу успешной отправки
             return render(request, 'account/support_email_success.html')
