@@ -1,0 +1,76 @@
+
+
+h1 {
+  text-align: inherit;
+}
+
+/*.main-block {*/
+/*    width: 100%;*/
+/*исправить*/
+/*}*/
+
+.rating {
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    font-weight: bold;
+}
+
+.rating-number {
+  font-size: 24px;
+}
+
+.stars {
+  color: gold;
+}
+
+.reviews {
+  margin: 20px;
+}
+
+.review {
+    display: flex;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 0 30px;
+    border-radius: 15px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.comment {
+  margin-top: 5px;
+}
+
+.add-review-button {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-review-button>a {
+    color: inherit;
+    text-decoration: inherit;
+}

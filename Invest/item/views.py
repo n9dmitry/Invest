@@ -102,5 +102,4 @@ def about(request):
     return render(request, 'item/about.html')
 
 
-def support(request):
-    return render(request, 'item/support.html')
+

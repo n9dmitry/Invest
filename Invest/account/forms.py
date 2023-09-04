@@ -3,9 +3,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Item
 
+from .models import SupportMail
 
-# from Invest.reg.models import Profile
-
+class SupportMailForm(forms.ModelForm):
+    class Meta:
+        model = SupportMail
+        fields = ['name', 'email', 'message']
 
 class RegistrationForm(UserCreationForm):
     interest = forms.ChoiceField(label='Меня больше интересует:', widget=forms.RadioSelect, choices=[

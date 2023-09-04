@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'dashboard',
     'messanger',
     'notifications',
-    'pay_services'
+    'pay_services',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,9 @@ ROOT_URLCONF = 'Invest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'account', 'templates', 'registration'), # Добавьте эту строку
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -143,30 +146,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # EMAIL
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 EMAIL_HOST = 'smtp.yandex.ru'
-
 EMAIL_PORT = 465
-
 EMAIL_USE_SSL = True
-
-
-EMAIL_HOST_USER = 'mari.volkova.22@yandex.ru'
-
-EMAIL_HOST_PASSWORD = 'slxmzbuzijwnceth'
-
+EMAIL_HOST_USER = 'starwolfinvest@yandex.ru'
+EMAIL_HOST_PASSWORD = 'zbsgfhwpgjygthxv'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
 SERVER_EMAIL = EMAIL_HOST_USER
-
 EMAIL_ADMIN = EMAIL_HOST_USER
 
 AUTHENTICATION_BACKENDS = [
     'account.auth.EmailAuthBackend',
 ]
 
-LOGIN_URL = 'account.views.signup'
+LOGIN_URL = 'registration'
 LOGIN_REDIRECT_URL = 'all_items'
 
 CELERY_BROKER_URL = "redis://localhost:6379"

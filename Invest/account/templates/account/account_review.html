@@ -1,0 +1,81 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/account_review.css' %} ">
+{% endblock %}
+
+{% block title %}
+Отзывы
+{% endblock %}
+
+{% block inner_content %}
+<div class="main-block">
+    <h1>Отзывы о пользователе</h1>
+    <div class="user-review">
+        <h2>Валера Валера</h2>
+    </div>
+    <div class="rating">
+        <span class="rating-number">4.5</span>
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    </div>
+    <button class="add-review-button"><a href="{% url 'add_review' %}">Добавить отзыв</a></button>
+    <div class="reviews">
+      <div class="review">
+        <div class="avatar">
+          <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="Аватар пользователя">
+        </div>
+        <div class="user-info">
+          <h2>Имя пользователя</h2>
+          <p class="rating">4.5*&#9733</p>
+          <p class="comment">Работал с чуваком, он молодец</p>
+        </div>
+      </div>
+      <div class="review">
+        <div class="avatar">
+          <img src="{% static 'Invest/img/unnamed.jpg' %}" alt="Аватар пользователя">
+        </div>
+        <div class="user-info">
+          <h2>Имя пользователя</h2>
+          <p class="rating">2*&#9733</p>
+          <p class="comment">Я того труба шатал! Шайтан!</p>
+        </div>
+      </div>
+      <script>
+        const reviews = document.querySelectorAll('.review');
+
+        // Переменные для вычисления суммы рейтингов и количества отзывов
+        let totalRating = 0;
+        let reviewCount = reviews.length;
+
+        reviews.forEach(review => {
+        const rating = review.querySelector('.rating');
+        const ratingValue = parseFloat(rating.textContent);
+        const roundedRating = Math.round(ratingValue * 2) / 2;
+        const stars = '&#9733;'.repeat(roundedRating);
+        rating.innerHTML = `${roundedRating} ${stars}`;
+
+        // Добавляем значение рейтинга к общей сумме
+        totalRating += roundedRating;
+        });
+
+        // Вычисляем среднее арифметическое
+        const averageRating = totalRating / reviewCount;
+
+        // Округляем до 1 знака после запятой
+        const roundedAverageRating = averageRating.toFixed(1);
+
+        // Вставляем значение среднего рейтинга обратно на страницу
+        const averageRatingElement = document.querySelector('.rating-number');
+        averageRatingElement.textContent = roundedAverageRating;
+      </script>
+      <!-- Добавьте другие отзывы здесь -->
+
+  </div>
+
+
+
+</div>
+
+{% endblock %}

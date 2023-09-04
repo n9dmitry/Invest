@@ -16,7 +16,8 @@
     <h1>Запрос в техподдержку</h1>
     <div class="container">
 
-        <form action="submit.php" method="POST">
+        <form method="post">
+            {% csrf_token %}
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" required>
 
@@ -26,8 +27,9 @@
             <label for="message">Сообщение:</label>
             <textarea id="message" name="message" required></textarea>
 
-            <input type="submit" value="Отправить">
+            <button type="submit">Отправить</button>
         </form>
+
     </div>
 </body>
 {% endblock %}

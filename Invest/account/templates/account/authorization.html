@@ -10,26 +10,30 @@ FoxInvest - Вход
 {% endblock %}
 
 {% block content %}
-<form method="post">
-    <div class="authorization">
-        <h1>Вход</h1>
-        {% csrf_token %}
-        {{errors}}
-        <label for="{{ form.username.id_for_label }}">Email</label>
-        {{ form.username }}
-        <br>
-        <p>
+<div class="main-block">
+    <form method="post">
+        <div class="authorization">
+            <h1>Вход</h1>
+            {% csrf_token %}
+            {{errors}}
+            <label for="{{ form.username.id_for_label }}">Email</label>
+            {{ form.username }}
+            <br>
+            <p>
+                <label for="{{ form.password.id_for_label }}">Пароль</label>
+                {{ form.password }}
+            </p>
+            <!--
+            <label for="{{form.username.id_for_label}}">Email:</label>
+            {{form.username}}<br><br>
+            <label for="{{form.password.id_for_label}}">Пароль:</label>
+            {{form.password}}<br><br> -->
+            <input id='enterbutton' type="submit" value="Войти">
+        </div>
+        <a id="reset_password_button" href="{% url 'password_reset'%}">Забыли пароль?</a>
+    </form>
 
-            <label for="{{ form.password.id_for_label }}">Пароль</label>
-            {{ form.password }}
-        </p>
-        <!-- 
-        <label for="{{form.username.id_for_label}}">Email:</label>
-        {{form.username}}<br><br>
-        <label for="{{form.password.id_for_label}}">Пароль:</label>
-        {{form.password}}<br><br> -->
-        <input id='enterbutton' type="submit" value="Войти">
-    </div>
-</form>
+</div>
+
 
 {% endblock %}

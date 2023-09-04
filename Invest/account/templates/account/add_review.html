@@ -1,0 +1,49 @@
+{% extends 'account/account_template_panel.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/base_panel.css' %} ">
+<link rel="stylesheet" href=" {% static 'Invest/css/add_review.css' %} ">
+{% endblock %}
+
+{% block title %}
+Отзывы
+{% endblock %}
+
+{% block inner_content %}
+
+<div class="main-block">
+  <h1>Оставить отзыв о пользователе</h1>
+  <h3>Выбрать объявление</h3>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      <option selected>Выберите объявление для отзыва</option>
+      <option value="1">Кафе Лофт</option>
+      <option value="2">Тест тест</option>
+      <option value="3">Продам скрепку</option>
+    </select>
+  <div class="item">
+    <div class="image">
+      <img src="{% static 'Invest/img/itemimg/1/2.jpg' %}" alt="Мини-картинка">
+    </div>
+    <h4>Кафе Лофт</h4>
+    <p>Требуемая инвестиций: 1000000₽</p>
+  </div>
+
+  <div class="rating-chose">
+      <h3>Выберите рейтинг:</h3>
+      <div class="stars">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+      </div>
+  </div>
+
+  <textarea class="review-text" placeholder="Напишите отзыв о пользователе"></textarea>
+  <button class="submit-button">Оставить отзыв</button>
+
+  <script src="script.js"></script>
+</div>
+
+{% endblock %}
