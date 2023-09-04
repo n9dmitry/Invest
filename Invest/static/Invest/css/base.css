@@ -53,7 +53,7 @@ a {
     display: flex;
 }
 
-.lefttopline ul {
+.menu-list {
     list-style-type: none;
     color: white;
     display: flex;
@@ -250,19 +250,49 @@ a {
 }
 
 /*Адаптив*/
-@media (max-width: 970px) {
-  .container_searchline>span {
-      margin: 0 3px;
-  }
-  .categories {
-      margin: 5px;
-      width: 7em;
-  }
-  .burger-button {
+@media (max-width: 900px) {
+
+.menu {
+  position: relative; /* Устанавливаем родительский блок в режим относительного позиционирования */
+}
+
+.menu-list {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute; /* Устанавливаем меню в абсолютное позиционирование */
+  top: 36px; /* Размещаем меню в верхнем краю родительского блока */
+  left: 0; /* Размещаем меню в левом краю родительского блока */
+  background-color: #3C90B8; /* Устанавливаем фон для меню */
+  padding: 10px; /* Добавляем отступы по желанию */
+  /*border-radius: 15px;*/
+        margin-left: 10px;
+    border: 1px solid black;
+  /*z-index: 1; !* Устанавливаем z-index, чтобы меню было выше других элементов *!*/
+}
+
+.menu-list.active {
+    display: block;
+}
+
+.burger-button {
     display: block;
     background-color: #3C90B8;
+    min-width: 50px;
+    margin-left: 10px;
+/* Добавьте нужные стили для видимости кнопки бургера */
+}
+
+.menu-list.active {
+    display: block; /* Показываем список при активном классе */
   }
 
+.menu-list li {
+    margin-bottom: 10px; /* Добавьте отступ между элементами меню */
+    color: black;
+    border-bottom: 1px solid;
+
+}
 }
 
 @media (max-width: 736px) {

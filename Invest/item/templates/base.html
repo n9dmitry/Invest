@@ -20,11 +20,12 @@
         <div class="topline">
             <div class="lefttopline">
                 <nav class="menu">
+                    <button class="burger-button">
+                        <span></span><span></span><span></span>
+                    <!--                    <img id="burger" src="{% static 'Invest/img/searchline/burger_menu.svg' %}">-->
+                    </button>
                     <ul class="menu-list">
-                        <button class="burger-button">
-                            <span></span><span></span><span></span>
-        <!--                    <img id="burger" src="{% static 'Invest/img/searchline/burger_menu.svg' %}">-->
-                        </button>
+
                         <li><a href="{% url 'all_items' %}">Главная</a></li>
                         <li><a href="{% url 'about' %}">О нас</a></li>
                         <li><a href="{% url 'support' %}">Поддержка</a></li>
@@ -32,6 +33,14 @@
 
                     </ul>
                 </nav>
+                <script>
+                  const burgerButton = document.querySelector('.burger-button');
+                  const menuList = document.querySelector('.menu-list');
+
+                  burgerButton.addEventListener('click', function() {
+                    menuList.classList.toggle('active'); // Добавляем или удаляем класс активности при клике на кнопку
+                  });
+                </script>
             </div>
             <div class="righttopline">
                 <div class="favorite_icon">
