@@ -15,6 +15,7 @@ urlpatterns = [
                   path('increment_count_phone_number_item/', views.increment_count_phone_number_item,
                        name='increment_count_phone_number_item'),
                   path('iteminfo/<int:item_id>/add_review/', views.CreateReview.as_view(), name='add_review'),
-                  path('my_reviews/', views.my_reviews, name='my_reviews')
-
+                  path('my_reviews/', views.my_reviews, name='my_reviews'),
+                  path('my_reviews/<int:pk>/', views.ReviewDetail.as_view(), name='review'),
+                  path('rev_delete/<int:pk>/', views.review_delete, name = 'del_review'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.urls import reverse
-from django.views.generic import View
+from django.views.generic import View, DetailView
 from django.views.generic import CreateView
 
 from .models import Item, Reviews
@@ -137,8 +137,18 @@ class CreateReview(LoginRequiredMixin, View):
 
 @login_required
 def my_reviews(request):
+    '''
+    показывает все отзывы залогиненного человека
+    '''
     revs = Reviews.objects.all()
     return render(request, 'item/all_item_reviews.html', context={'revs':revs})
 
-class ReviewDetail(LoginRequiredMixin, View):
-    template_name = 'item/'
+class ReviewDetail(LoginRequiredMixin, DetailView):
+    template_name = 'item/review.html'
+    model = Reviews
+    context_object_name = 'review'
+
+@login_required()
+def review_delete(request, pk):
+    get_object_or_404(Reviews, pk=pk).delete()
+    return redirect('my_reviews')
