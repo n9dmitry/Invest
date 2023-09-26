@@ -1,11 +1,17 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
+from django.template import RequestContext
+from django.urls import reverse
+from django.views.generic import View
+from django.views.generic import CreateView
 
-from .models import Item
-from .forms import ItemForm
+from .models import Item, Reviews
+from .forms import ItemForm, ReviewForm, ReviewImageForm
 from account.models import Profile
+
 
 def all_items(request):
     """
@@ -104,3 +110,35 @@ def about(request):
 
 def support(request):
     return render(request, 'item/support.html')
+
+
+class CreateReview(LoginRequiredMixin, View):
+    template_name = 'account/add_review.html'
+
+
+
+    def get(self, request, *args, **kwargs):
+        form1 = ReviewForm(prefix='form1')
+        form2 = ReviewImageForm(prefix='form2')
+        return render(request, context= ({'form1': form1, 'form2': form2}), template_name='account/add_review.html')
+
+    def post(self, request, *args, **kwargs):
+        review_form = ReviewForm(self.request.POST, prefix='form1')
+        review_form.instance.user = request.user
+        review_form.instance.item = Item.objects.get(pk  = self.kwargs['item_id'])
+        image_form = ReviewImageForm(self.request.POST, self.request.FILES, prefix='form2')
+        if review_form.is_valid():
+            review_form.save()
+        image_form.instance.review = review_form.instance
+        if image_form.is_valid():
+            image_form.save()
+            return redirect('iteminfo', self.kwargs['item_id'])
+
+
+@login_required
+def my_reviews(request):
+    revs = Reviews.objects.all()
+    return render(request, 'item/all_item_reviews.html', context={'revs':revs})
+
+class ReviewDetail(LoginRequiredMixin, View):
+    template_name = 'item/'

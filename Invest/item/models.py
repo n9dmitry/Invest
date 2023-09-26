@@ -2,7 +2,10 @@
     Модели для Item
 """
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator, MaxLengthValidator
 from django.db import models
+
+
 
 
 class Category(models.Model):
@@ -55,3 +58,36 @@ class ItemImage(models.Model):
     item_id = models.IntegerField(blank=True, null=True)
     image = models.ImageField(
         upload_to=save_image, blank=True, null=True)
+
+class Reviews(models.Model):
+    """
+
+    """
+    RATING_RANGE = (
+        (1, 1),
+        (2, 2),
+        (3, 3),
+        (4, 4),
+        (5, 5)
+    )
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=RATING_RANGE)
+    text = models.TextField(validators=[MinLengthValidator(10), MaxLengthValidator(1000)])
+    #image = models.ForeignKey('ReviewsImages', null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
+    created_data = models.DateTimeField(auto_now_add=True)
+    updated_data = models.DateTimeField(auto_now=True)
+
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
+
+
+def save_rev_images(instance, filename):
+    return '/'.join(['revimages', str(instance.image), filename])
+
+class ReviewsImages(models.Model):
+    image = models.ImageField(upload_to=save_rev_images)
+    review = models.ForeignKey(Reviews, on_delete=models.CASCADE)
+

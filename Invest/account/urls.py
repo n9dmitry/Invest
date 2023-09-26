@@ -15,10 +15,11 @@ urlpatterns = [
     path('account_settings', views.account_settings, name='account_settings'),
     path('registration', views.signup, name='registration'),
     path('add_favorite/', views.add_to_favorite, name='add_favorite'),
-    path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',activate, name='activate'), 
+    path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',activate, name='activate'),
     path('authorization', LoginView.as_view(template_name='account/authorization.html'), name='authorization'),
     path('logout/', LogoutView.as_view(template_name='account/logout.html'), name='logout'),
     path('account_review/', views.account_review, name='account_review'),
     path('add_review/', views.add_review, name='add_review'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

@@ -1,6 +1,8 @@
 Django
 psycopg2
 Pillow
-redis
+redis==5.0.0
 celery
-six
+six==1.16.0
+django-debug-toolbar==4.2.0
+pytz==2023.3

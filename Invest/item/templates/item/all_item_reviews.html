@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'Invest/css/authorization.css' %} ">
+{% endblock %}
+
+
+{% block content %}
+<div class="item-space">
+    {% if not revs %}
+        <p>У вас еше нет оставленных отзывов</p>
+    {% else %}
+        {% for item in revs %}
+
+        <p>{{ item.item.title }}</p>
+            {{ item.rating }}
+        {% endfor %}
+    {% endif %}
+</div>
+
+
+{% endblock %}
