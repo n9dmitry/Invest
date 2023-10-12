@@ -1,8 +1,9 @@
 Django
-psycopg2
+psycopg2-binary==2.9.8
 Pillow
-redis==5.0.0
-celery
+celery==5.3.4
 six==1.16.0
 django-debug-toolbar==4.2.0
 pytz==2023.3
+flower==2.0.1
+redis==5.0.1
