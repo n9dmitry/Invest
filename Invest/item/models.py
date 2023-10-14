@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator, MaxLengthValidator
 from django.db import models
 
-
+from .tasks import set_avg_rating
 
 
 class Category(models.Model):
@@ -39,6 +39,9 @@ class Item(models.Model):
     count_add_favorite = models.ManyToManyField(
         User, related_name='favorite_items')
     status = models.CharField(max_length=100, default='Проверяется')
+    avg_rating = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)], default= 0.0)
+    # TODO: надо добавить пункт active
+    #  пусть объявления вечно не висят
 
     def __str__(self):
         return str(self.title)
@@ -73,11 +76,15 @@ class Reviews(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     rating = models.IntegerField(choices=RATING_RANGE)
     text = models.TextField(validators=[MinLengthValidator(10), MaxLengthValidator(1000)])
-    #image = models.ForeignKey('ReviewsImages', null=True, on_delete=models.SET_NULL)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
     created_data = models.DateTimeField(auto_now_add=True)
     updated_data = models.DateTimeField(auto_now=True)
 
+    def save(self):
+        item_id = self.item.__getattribute__('id')
+        print(item_id)
+        set_avg_rating.delay(item_id)
+        return super().save()
 
     class Meta:
         verbose_name = "Отзыв"

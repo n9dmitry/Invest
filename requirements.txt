@@ -1,9 +1,10 @@
-Django
+Django==4.2.6
 psycopg2-binary==2.9.8
-Pillow
+Pillow==10.0.1
 celery==5.3.4
 six==1.16.0
 django-debug-toolbar==4.2.0
 pytz==2023.3
 flower==2.0.1
 redis==5.0.1
+django-stubs==4.2.4

@@ -12,6 +12,8 @@ from .models import Item, Reviews
 from .forms import ItemForm, ReviewForm, ReviewImageForm
 from account.models import Profile
 
+from .tasks import set_avg_rating
+
 
 def all_items(request):
     """
@@ -129,6 +131,7 @@ class CreateReview(LoginRequiredMixin, View):
         image_form = ReviewImageForm(self.request.POST, self.request.FILES, prefix='form2')
         if review_form.is_valid():
             review_form.save()
+            #set_avg_rating.delay(self.kwargs['item_id'])
         image_form.instance.review = review_form.instance
         if image_form.is_valid():
             image_form.save()

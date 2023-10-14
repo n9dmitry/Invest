@@ -11,7 +11,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Invest.settings')
 
 app = Celery('invest')
 app.config_from_object('django.conf:settings', namespace='CELERY')
-#app.conf.broker_url = settings.CELERY_BROKER_URL
+app.conf.broker_url = settings.CELERY_BROKER_URL
 app.autodiscover_tasks()
 
 
@@ -26,3 +26,7 @@ app.conf.beat_shedule = {
         'shedule': crontab(minute='*/1'),
     }
 }
+
+@app.task()
+def sum(a,b):
+    return a+b
